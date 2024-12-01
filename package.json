@@ -1,0 +1,24 @@
+{
+  "name": "swa-llm-survey-eval-exp",
+  "version": "1.0.0",
+  "description": "LLM Survey and Exaluation Experiment (UISCIS 2024 Paper Conference)",
+  "main": "main.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "author": "Tim Widholm",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.4.5",
+    "openai": "^4.73.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}

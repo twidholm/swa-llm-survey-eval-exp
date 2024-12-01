@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext", // Für Node.js
+    "moduleResolution": "nodenext",
+    "target": "ES6", // Modernes JavaScript
+    "sourceMap": true,
+    "outDir": "./dist" // Kompilierte Dateien
+  },
+  "include": ["src/**/*"]
+}

@@ -1,4 +1,4 @@
-function cohensKappa(matrix: number[][]): number {
+export function cohensKappa(matrix: number[][]): number {
   // Gesamtanzahl der Beobachtungen
   const total = matrix.flat().reduce((sum, val) => sum + val, 0)
 

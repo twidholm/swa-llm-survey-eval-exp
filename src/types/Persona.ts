@@ -62,5 +62,3 @@ export type Persona = {
     ideology: Ideology
   }
 }
-
-export const personas: Array<Persona> = []

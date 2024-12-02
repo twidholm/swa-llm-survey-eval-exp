@@ -1,5 +1,5 @@
 import { ModelType } from "./ModelType.js"
-import { Persona } from "./Personas.js"
+import { Persona } from "./Persona.js"
 
 export type Result = {
   questionId: string

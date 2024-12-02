@@ -1,11 +1,10 @@
-import { Persona } from "../types/Personas.js"
-import { Question } from "../types/Questions.js"
+import { Persona } from "../types/Persona.js"
+import { Question } from "../types/Question.js"
 
 import Anthropic from "@anthropic-ai/sdk"
 import Model from "./model.js"
-import path from "path"
-import { existsSync, readFileSync, writeFileSync } from "fs"
 import { Result } from "../types/Result.js"
+import { createPersonaText } from "../functions/template.js"
 
 class Claude_Ai extends Model {
   private readonly instance = new Anthropic({
@@ -14,6 +13,8 @@ class Claude_Ai extends Model {
 
   private persona: Persona
   private results: Array<Result>
+  private messages: Array<any>
+
   constructor(modelType) {
     super(modelType)
   }
@@ -26,6 +27,7 @@ class Claude_Ai extends Model {
       temperature: 0.2,
     }
     const response = await this.instance.messages.create(params)
+
     const content = response.content as Array<Anthropic.TextBlock>
 
     this.results.push({
@@ -33,7 +35,19 @@ class Claude_Ai extends Model {
       responseOption: content[0].text,
     })
   }
+  public async initPersona() {
+    const personaText = createPersonaText(this.persona, 100)
 
+    this.addMessage("user", personaText)
+    const response = ""
+    this.addMessage("assistent", "")
+  }
+  public addMessage(role: string, content: string) {
+    this.messages.push({
+      role,
+      content,
+    })
+  }
   public setPersona(persona: any): void {
     this.persona = persona
   }

@@ -1,5 +1,5 @@
+import { questions } from "../data/Questions.js"
 import { PersonaModelResult } from "../types/Result.js"
-import { questions } from "../types/Questions.js"
 
 class Evaluator {
   constructor(private results: Array<PersonaModelResult>) {}

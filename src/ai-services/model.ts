@@ -1,5 +1,5 @@
 import { ModelType } from "../types/ModelType.js"
-import { Question } from "../types/Questions.js"
+import { Question } from "../types/Question.js"
 
 abstract class Model {
   protected constructor(public modelType: ModelType) {}
@@ -9,6 +9,7 @@ abstract class Model {
   abstract setPersona(persona: any): void
   abstract getPersona(): any
   abstract getResults(): any
+  abstract initPersona(): any
 }
 
 export default Model

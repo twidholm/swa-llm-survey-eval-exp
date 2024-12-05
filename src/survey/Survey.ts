@@ -7,8 +7,8 @@ import Gpt_Ai from "../ai-services/gpt-4o.js"
 import Grok_Ai from "../ai-services/grok-2.js"
 import { PersonaModelResult, Result } from "../types/Result.js"
 import { ModelType } from "../types/ModelType.js"
-import { personas } from "../data/Personas.js"
-import { questions } from "../data/Questions.js"
+import { personas } from "../data/personas_large.js"
+import { questions } from "../data/questions.js"
 
 dotenv.config()
 

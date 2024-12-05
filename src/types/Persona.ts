@@ -1,20 +1,20 @@
-enum Gender {
+export enum Gender {
   Male,
   Female,
 }
-enum Education {
+export enum Education {
   Primary,
   Lower_Secondary,
   Upper_Secondary,
   Undergratuate,
   Graduate,
 }
-enum SocialClass {
+export enum SocialClass {
   Upper,
   Middle,
   Lower,
 }
-enum Race {
+export enum Race {
   White,
   African_Descent,
   Asian,
@@ -22,7 +22,7 @@ enum Race {
   Pacific_Islander,
   Hispanic,
 }
-enum PoliticalMembership {
+export enum PoliticalMembership {
   CDU,
   SPD,
   TheGreens,
@@ -31,7 +31,7 @@ enum PoliticalMembership {
   DieLinke,
   BSW,
 }
-enum Ideology {
+export enum Ideology {
   Liberalism,
   Conservatism,
   Socialism,
@@ -46,13 +46,16 @@ enum Ideology {
   Centrism,
   Progressivism,
 }
-
+export enum Age {
+  to29,
+  above30andto49,
+  above50,
+}
 export type Persona = {
   id: string
-  name: string
   demographics: {
-    age: number
-    gender: Gender
+    age: Age
+    sex: Gender
     education: Education
     social_class: SocialClass
     race: Race

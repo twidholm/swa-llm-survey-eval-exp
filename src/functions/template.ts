@@ -2,9 +2,9 @@ import { Persona } from "../types/Persona.js"
 
 export function createPersonaText(persona: Persona, questioncount: number) {
   const personaTemplate = `
-    Du nimmst als Person an einer sozialpolitischen Umfrage der WVS über Deutschland teil. Dein Name ist ${persona.name}. 
+    Du nimmst als Person an einer sozialpolitischen Umfrage der WVS über Deutschland teil. 
     Du bist im Alter von ${persona.demographics.age}. 
-    Dein Geschlecht ist ${persona.demographics.gender}. 
+    Dein Geschlecht ist ${persona.demographics.sex}. 
     Deine Rasse ist  ${persona.demographics.race}. 
     Deine Soziale Klasse ist  ${persona.demographics.social_class}.
     Dein Bildungsstand ist  ${persona.demographics.education}.

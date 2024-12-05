@@ -1,27 +1,27 @@
-import { GoogleGenerativeAI } from "@google/generative-ai"
 import dotenv from "dotenv"
 import { Persona } from "../types/Persona.js"
 import Model from "./model.js"
 import { Question } from "../types/Question.js"
-import path from "path"
-import { existsSync, readFileSync, writeFileSync } from "fs"
 import OpenAI from "openai"
 import { Result } from "../types/Result.js"
-import { ChatCompletionCreateParamsBase } from "openai/resources/chat/completions.mjs"
 import { createPersonaText } from "../functions/template.js"
+import { ModelType } from "../types/ModelType.js"
+
 dotenv.config()
 
 class Gpt_Ai extends Model {
   private persona: Persona
-  private results: Array<Result>
+  private results: Array<Result> = []
   private readonly instance = new OpenAI({
-    apiKey: process.env.GPT_API_Key, // This is the default and can be omitted
+    apiKey: process.env.GPT_API_Key, // API Key aus der .env-Datei
   })
-  private messages: Array<any>
-  constructor(modelType) {
+  private messages: Array<any> = []
+
+  constructor(modelType: ModelType) {
     super(modelType)
   }
-  public async generateResponse(question: Question) {
+
+  public async generateResponse(question: Question): Promise<void> {
     this.messages.push({ role: "user", content: question.text })
 
     const response = (await this.instance.chat.completions.create({
@@ -30,41 +30,59 @@ class Gpt_Ai extends Model {
       temperature: 0.2,
     })) as OpenAI.Chat.ChatCompletion
 
+    const responseContent = response.choices?.[0]?.message?.content
+    if (!responseContent) {
+      throw new Error("No response received from the model.")
+    }
+
     this.messages.push({
-      role: "assistent",
-      content: response.choices[0].message.content,
+      role: "assistant",
+      content: responseContent,
     })
 
     this.results.push({
       questionId: question.id,
-      responseOption: response.choices[0].message.content,
+      responseOption: responseContent,
     })
   }
 
-  public async initPersona() {
+  public async initPersona(): Promise<void> {
     const personaText = createPersonaText(this.persona, 100)
     this.addMessage("user", personaText)
+
     const response = (await this.instance.chat.completions.create({
       model: "gpt-4o",
       messages: [...this.messages],
       temperature: 0.2,
     })) as OpenAI.Chat.ChatCompletion
-    this.addMessage("assistent", response.choices[0].message.content)
+
+    const responseContent = response.choices?.[0]?.message?.content
+    if (!responseContent) {
+      throw new Error("No response received from the model.")
+    }
+
+    this.addMessage("assistant", responseContent)
   }
-  public setPersona(persona: any): void {
+
+  public setPersona(persona: Persona): void {
     this.persona = persona
+    this.messages = [] // Reset messages für eine neue Persona
   }
-  public addMessage(role: string, content: string) {
+
+  public addMessage(role: string, content: string): void {
     this.messages.push({
       role,
       content,
     })
   }
-  public getPersona(): any {
+
+  public getPersona(): Persona {
     return this.persona
   }
-  public getResults() {
+
+  public getResults(): Array<Result> {
     return this.results
   }
 }
+
 export default Gpt_Ai

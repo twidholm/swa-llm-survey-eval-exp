@@ -20,27 +20,41 @@ class Claude_Ai extends Model {
   }
 
   public async generateResponse(question: Question) {
+    this.messages.push({ role: "user", content: question.text })
+
     const params: Anthropic.MessageCreateParams = {
       max_tokens: 1024,
-      messages: [{ role: "user", content: question.text }],
+      messages: this.messages,
       model: "claude-3-opus-20240229",
       temperature: 0.2,
     }
     const response = await this.instance.messages.create(params)
 
-    const content = response.content as Array<Anthropic.TextBlock>
-
-    this.results.push({
-      questionId: question.id,
-      responseOption: content[0].text,
-    })
+    if (response.content[0].type === "text") {
+      const text = response.content[0].text
+      this.messages.push({ role: "assistant", content: text })
+      this.results.push({
+        questionId: question.id,
+        responseOption: response.content[0].text,
+      })
+    }
   }
   public async initPersona() {
     const personaText = createPersonaText(this.persona, 100)
+    this.messages.push({ role: "user", content: personaText })
 
-    this.addMessage("user", personaText)
-    const response = ""
-    this.addMessage("assistent", "")
+    const params: Anthropic.MessageCreateParams = {
+      max_tokens: 1024,
+      messages: this.messages,
+      model: "claude-3-opus-20240229",
+      temperature: 0.2,
+    }
+    const response = await this.instance.messages.create(params)
+
+    if (response.content[0].type === "text") {
+      const text = response.content[0].text
+      this.messages.push({ role: "assistant", content: text })
+    }
   }
   public addMessage(role: string, content: string) {
     this.messages.push({

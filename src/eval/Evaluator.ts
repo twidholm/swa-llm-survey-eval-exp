@@ -1,4 +1,4 @@
-import { questions } from "../data/Questions.js"
+import { questions } from "../data/questions.js"
 import { PersonaModelResult } from "../types/Result.js"
 
 class Evaluator {

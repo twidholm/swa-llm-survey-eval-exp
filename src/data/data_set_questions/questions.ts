@@ -1,4 +1,4 @@
-import { Question } from "../types/Question.js"
+import { Question } from "../../types/Question.js"
 
 export const questions: Array<Question> = [
   {

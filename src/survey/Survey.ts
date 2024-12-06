@@ -8,7 +8,7 @@ import Grok_Ai from "../ai-services/grok-2.js"
 import { PersonaModelResult, Result } from "../types/Result.js"
 import { ModelType } from "../types/ModelType.js"
 import { personas } from "../data/personas_large.js"
-import { questions } from "../data/questions.js"
+import { questions } from "../data/data_set_questions/questions.js"
 
 dotenv.config()
 

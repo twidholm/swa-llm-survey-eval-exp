@@ -4,7 +4,8 @@ import { Question } from "../types/Question.js"
 import Anthropic from "@anthropic-ai/sdk"
 import Model from "./model.js"
 import { Result } from "../types/Result.js"
-import { createPersonaText } from "../functions/template.js"
+import { createPersonaPrompt } from "../functions/createPersonaPrompt.js"
+import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
 
 class Claude_Ai extends Model {
   private readonly instance = new Anthropic({
@@ -20,7 +21,8 @@ class Claude_Ai extends Model {
   }
 
   public async generateResponse(question: Question) {
-    this.messages.push({ role: "user", content: question.text })
+    const content = createQuestionPrompt(question)
+    this.messages.push({ role: "user", content: content })
 
     const params: Anthropic.MessageCreateParams = {
       max_tokens: 1024,
@@ -31,16 +33,24 @@ class Claude_Ai extends Model {
     const response = await this.instance.messages.create(params)
 
     if (response.content[0].type === "text") {
-      const text = response.content[0].text
-      this.messages.push({ role: "assistant", content: text })
+      const responseContent = response.content[0].text
+      if (!responseContent) {
+        throw new Error("No response received from the model.")
+      }
+
+      this.messages.push({
+        role: "assistant",
+        content: responseContent,
+      })
+
       this.results.push({
         questionId: question.id,
-        responseOption: response.content[0].text,
+        responseOption: responseContent,
       })
     }
   }
-  public async initPersona() {
-    const personaText = createPersonaText(this.persona, 100)
+  public async initPersona(questionCount: number) {
+    const personaText = createPersonaPrompt(this.persona, questionCount)
     this.messages.push({ role: "user", content: personaText })
 
     const params: Anthropic.MessageCreateParams = {

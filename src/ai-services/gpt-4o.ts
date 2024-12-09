@@ -4,8 +4,9 @@ import Model from "./model.js"
 import { Question } from "../types/Question.js"
 import OpenAI from "openai"
 import { Result } from "../types/Result.js"
-import { createPersonaText } from "../functions/template.js"
+import { createPersonaPrompt } from "../functions/createPersonaPrompt.js"
 import { ModelType } from "../types/ModelType.js"
+import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
 
 dotenv.config()
 
@@ -22,7 +23,8 @@ class Gpt_Ai extends Model {
   }
 
   public async generateResponse(question: Question): Promise<void> {
-    this.messages.push({ role: "user", content: question.text })
+    const content = createQuestionPrompt(question)
+    this.messages.push({ role: "user", content: content })
 
     const response = (await this.instance.chat.completions.create({
       model: "gpt-4o",
@@ -46,8 +48,8 @@ class Gpt_Ai extends Model {
     })
   }
 
-  public async initPersona(): Promise<void> {
-    const personaText = createPersonaText(this.persona, 100)
+  public async initPersona(questionCount: number): Promise<void> {
+    const personaText = createPersonaPrompt(this.persona, questionCount)
     this.addMessage("user", personaText)
 
     const response = (await this.instance.chat.completions.create({

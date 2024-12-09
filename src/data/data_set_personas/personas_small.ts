@@ -11,7 +11,8 @@ import {
   Sex,
   SocialClass,
 } from "../../types/Persona.js"
-export const personas: Array<Persona> = [
+// Verteilung im Rahmen von WVS Germany Wave 7
+export const personas_poll_dist_small: Array<Persona> = [
   {
     id: 1,
     demographics: {

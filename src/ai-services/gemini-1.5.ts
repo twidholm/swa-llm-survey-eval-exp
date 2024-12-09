@@ -8,7 +8,8 @@ import { Persona } from "../types/Persona.js"
 import Model from "./model.js"
 import { Question } from "../types/Question.js"
 import { Result } from "../types/Result.js"
-import { createPersonaText } from "../functions/template.js"
+import { createPersonaPrompt } from "../functions/createPersonaPrompt.js"
+import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
 dotenv.config()
 
 class Gemini_Ai extends Model {
@@ -26,17 +27,29 @@ class Gemini_Ai extends Model {
   }
 
   public async generateResponse(question: Question) {
+    const content = createQuestionPrompt(question)
+    this.messages.push({ role: "user", content: content })
+
     const response = (await this.chat.sendMessage(
       question.text
     )) as GenerateContentResult
-    this.addMessage("assistent", response.response.text())
+    const responseContent = response.response.text()
+    if (!responseContent) {
+      throw new Error("No response received from the model.")
+    }
+
+    this.messages.push({
+      role: "assistant",
+      content: responseContent,
+    })
+
     this.results.push({
       questionId: question.id,
-      responseOption: response.response.text(),
+      responseOption: responseContent,
     })
   }
-  public async initPersona() {
-    const personaText = createPersonaText(this.persona, 100)
+  public async initPersona(questionCount: number) {
+    const personaText = createPersonaPrompt(this.persona, questionCount)
     this.model.systemInstruction.role = personaText
 
     this.chat = this.model.startChat({

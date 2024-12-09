@@ -4,7 +4,8 @@ import Model from "./model.js"
 import { Question } from "../types/Question.js"
 import { text } from "stream/consumers"
 import { Result } from "../types/Result.js"
-import { createPersonaText } from "../functions/template.js"
+import { createPersonaPrompt } from "../functions/createPersonaPrompt.js"
+import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
 
 class Grok_Ai extends Model {
   private readonly instance = new OpenAI({
@@ -20,18 +21,31 @@ class Grok_Ai extends Model {
   }
 
   public async generateResponse(question: Question) {
+    const content = createQuestionPrompt(question)
+    this.messages.push({ role: "user", content: content })
     const response = (await this.instance.chat.completions.create({
       model: "grok-beta",
-      messages: [{ role: "user", content: question.text }],
+      messages: [...this.messages],
       temperature: 0.2,
     })) as OpenAI.Chat.ChatCompletion
+
+    const responseContent = response.choices?.[0]?.message?.content
+    if (!responseContent) {
+      throw new Error("No response received from the model.")
+    }
+
+    this.messages.push({
+      role: "assistant",
+      content: responseContent,
+    })
+
     this.results.push({
       questionId: question.id,
-      responseOption: response.choices[0].message.content,
+      responseOption: responseContent,
     })
   }
-  public async initPersona() {
-    const personaText = createPersonaText(this.persona, 100)
+  public async initPersona(questionCount: number) {
+    const personaText = createPersonaPrompt(this.persona, questionCount)
     this.addMessage("user", personaText)
     const response = (await this.instance.chat.completions.create({
       model: "gpt-4o",

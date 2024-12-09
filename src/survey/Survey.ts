@@ -7,28 +7,21 @@ import Gpt_Ai from "../ai-services/gpt-4o.js"
 import Grok_Ai from "../ai-services/grok-2.js"
 import { PersonaModelResult, Result } from "../types/Result.js"
 import { ModelType } from "../types/ModelType.js"
-import { personas } from "../data/personas_large.js"
-import { questions } from "../data/data_set_questions/questions.js"
+import { createModel } from "../functions/createModel.js"
+import { Persona } from "../types/Persona.js"
+import { Question } from "../types/Question.js"
 
 dotenv.config()
 
 class Survey {
   private surveyResults: Array<PersonaModelResult> = []
-  constructor() {}
-  private createModel(modelType: ModelType): Model {
-    switch (modelType) {
-      case ModelType.Claude:
-        return new Claude_Ai(modelType)
-      case ModelType.Gemini:
-        return new Gemini_Ai(modelType) // Implementiere Gemini_Ai separat
-      case ModelType.GPT:
-        return new Gpt_Ai(modelType) // Implementiere Gpt_Ai separat
-      case ModelType.Grok:
-        return new Grok_Ai(modelType) // Implementiere Grok_Ai separat
-      default:
-        throw new Error("Unknown model type")
-    }
+  private questions: Array<Question>
+  private personas: Array<Persona>
+  constructor(personas: Array<Persona>, questions: Array<Question>) {
+    this.personas = personas
+    this.questions = questions
   }
+
   private addResult(modelResults, modelType, persona) {
     this.surveyResults.push({
       results: modelResults,
@@ -40,13 +33,13 @@ class Survey {
     return this.surveyResults
   }
   async run() {
-    for (const persona of personas) {
+    for (const persona of this.personas) {
       for (let i = 0; i <= 3; i++) {
         const modelType = i as ModelType
-        const model = this.createModel(modelType)
+        const model = createModel(modelType)
         model.setPersona(persona)
-        model.initPersona()
-        for (const question of questions) {
+        model.initPersona(this.questions.length)
+        for (const question of this.questions) {
           model.generateResponse(question)
         }
         const modelResults = model.getResults() as Array<Result>

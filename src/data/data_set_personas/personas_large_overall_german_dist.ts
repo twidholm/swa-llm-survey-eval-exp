@@ -12,7 +12,7 @@ import {
   SocialClass,
 } from "../../types/Persona.js"
 
-export const personas: Array<Persona> = [
+export const personas_overall_dist_large: Array<Persona> = [
   {
     id: 1,
     demographics: {

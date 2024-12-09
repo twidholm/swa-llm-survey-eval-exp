@@ -11,8 +11,8 @@ import {
   Sex,
   SocialClass,
 } from "../../types/Persona.js"
-
-export const personas: Array<Persona> = [
+// Verteilung basiert auf ganz Deutschland
+export const personas_overall_dist_small: Array<Persona> = [
   {
     id: 1,
     demographics: {

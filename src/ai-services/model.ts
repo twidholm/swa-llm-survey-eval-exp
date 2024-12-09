@@ -9,7 +9,7 @@ abstract class Model {
   abstract setPersona(persona: any): void
   abstract getPersona(): any
   abstract getResults(): any
-  abstract initPersona(): any
+  abstract initPersona(questionCount: number): any
 }
 
 export default Model

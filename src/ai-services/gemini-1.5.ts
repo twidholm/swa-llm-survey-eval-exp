@@ -1,6 +1,7 @@
 import {
   ChatSession,
   GenerateContentResult,
+  GenerativeModel,
   GoogleGenerativeAI,
 } from "@google/generative-ai"
 import dotenv from "dotenv"
@@ -15,50 +16,47 @@ dotenv.config()
 class Gemini_Ai extends Model {
   private readonly instance = new GoogleGenerativeAI(process.env.Gemini_API_Key)
   private persona: Persona
-  private results: Array<Result>
-  private messages: Array<any>
-  private chat: ChatSession
-  private readonly model = this.instance.getGenerativeModel({
-    model: "gemini-1.5-flash",
-  })
 
+  private messages: Array<any>
+
+  private readonly model: GenerativeModel
+  private chat: ChatSession
   constructor(modelType) {
     super(modelType)
+    this.messages = [] // Initialize messages array
+    this.persona = null // Initialize persona
+    this.model = this.instance.getGenerativeModel({
+      model: "gemini-1.5-flash",
+    })
+    this.chat = this.model.startChat()
   }
 
   public async generateResponse(question: Question) {
     const content = createQuestionPrompt(question)
-    this.messages.push({ role: "user", content: content })
 
-    const response = (await this.chat.sendMessage(
-      question.text
-    )) as GenerateContentResult
-    const responseContent = response.response.text()
-    if (!responseContent) {
-      throw new Error("No response received from the model.")
+    this.addMessage("user", content)
+    try {
+      const response = (await this.chat.sendMessage(
+        question.text
+      )) as GenerateContentResult
+      const responseContent = response.response.text()
+      if (!responseContent) {
+        throw new Error("No response received from the model.")
+      }
+      this.addMessage("assistant", responseContent)
+    } catch (error) {
+      console.error(error)
     }
-
-    this.messages.push({
-      role: "assistant",
-      content: responseContent,
-    })
-
-    this.results.push({
-      questionId: question.id,
-      responseOption: responseContent,
-    })
   }
   public async initPersona(questionCount: number) {
     const personaText = createPersonaPrompt(this.persona, questionCount)
-    this.model.systemInstruction.role = personaText
-
-    this.chat = this.model.startChat({
-      history: [...this.messages],
-    })
-    const response = await this.chat.sendMessage(personaText)
-
-    this.addMessage("user", personaText)
-    this.addMessage("assistent", response.response.text()) // Müssen die messages gespeichert werden hier wenn ein chat kreiiert wird?
+    try {
+      const response = await this.chat.sendMessage(personaText)
+      this.addMessage("user", personaText)
+      this.addMessage("assistent", response.response.text())
+    } catch (error) {
+      console.error(error)
+    }
   }
   public addMessage(role: string, content: string) {
     this.messages.push({
@@ -74,7 +72,7 @@ class Gemini_Ai extends Model {
     return this.persona
   }
   public getResults() {
-    return this.results
+    return this.messages
   }
 }
 export default Gemini_Ai

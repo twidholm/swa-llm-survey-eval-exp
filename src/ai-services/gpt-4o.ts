@@ -12,7 +12,6 @@ dotenv.config()
 
 class Gpt_Ai extends Model {
   private persona: Persona
-  private results: Array<Result> = []
   private readonly instance = new OpenAI({
     apiKey: process.env.GPT_API_Key, // API Key aus der .env-Datei
   })
@@ -20,50 +19,49 @@ class Gpt_Ai extends Model {
 
   constructor(modelType: ModelType) {
     super(modelType)
+    this.messages = [] // Initialize messages array
+    this.persona = null // Initialize persona
   }
 
   public async generateResponse(question: Question): Promise<void> {
     const content = createQuestionPrompt(question)
-    this.messages.push({ role: "user", content: content })
+    this.addMessage("user", content)
+    try {
+      const response = (await this.instance.chat.completions.create({
+        model: "gpt-4o",
+        messages: [...this.messages],
+        temperature: 0.2,
+      })) as OpenAI.Chat.ChatCompletion
 
-    const response = (await this.instance.chat.completions.create({
-      model: "gpt-4o",
-      messages: [...this.messages],
-      temperature: 0.2,
-    })) as OpenAI.Chat.ChatCompletion
-
-    const responseContent = response.choices?.[0]?.message?.content
-    if (!responseContent) {
-      throw new Error("No response received from the model.")
+      const responseContent = response.choices?.[0]?.message?.content
+      if (!responseContent) {
+        throw new Error("No response received from the model.")
+      }
+      this.addMessage("assistant", responseContent)
+    } catch (error) {
+      console.error(error)
     }
-
-    this.messages.push({
-      role: "assistant",
-      content: responseContent,
-    })
-
-    this.results.push({
-      questionId: question.id,
-      responseOption: responseContent,
-    })
   }
 
   public async initPersona(questionCount: number): Promise<void> {
     const personaText = createPersonaPrompt(this.persona, questionCount)
     this.addMessage("user", personaText)
+    try {
+      const response = (await this.instance.chat.completions.create({
+        model: "gpt-4o",
+        messages: [...this.messages],
+        temperature: 0.2,
+      })) as OpenAI.Chat.ChatCompletion
 
-    const response = (await this.instance.chat.completions.create({
-      model: "gpt-4o",
-      messages: [...this.messages],
-      temperature: 0.2,
-    })) as OpenAI.Chat.ChatCompletion
+      const responseContent = response.choices?.[0]?.message?.content
+      if (!responseContent) {
+        throw new Error("No response received from the model.")
+      }
 
-    const responseContent = response.choices?.[0]?.message?.content
-    if (!responseContent) {
-      throw new Error("No response received from the model.")
+      this.addMessage("assistant", responseContent)
+    } catch (error) {
+      console.error(error)
     }
-
-    this.addMessage("assistant", responseContent)
   }
 
   public setPersona(persona: Persona): void {
@@ -83,7 +81,7 @@ class Gpt_Ai extends Model {
   }
 
   public getResults(): Array<Result> {
-    return this.results
+    return this.messages
   }
 }
 

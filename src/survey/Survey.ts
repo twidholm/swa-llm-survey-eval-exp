@@ -1,10 +1,5 @@
 import dotenv from "dotenv"
 
-import Model from "../ai-services/model.js"
-import Claude_Ai from "../ai-services/claude-3.js"
-import Gemini_Ai from "../ai-services/gemini-1.5.js"
-import Gpt_Ai from "../ai-services/gpt-4o.js"
-import Grok_Ai from "../ai-services/grok-2.js"
 import { PersonaModelResult, Result } from "../types/Result.js"
 import { ModelType } from "../types/ModelType.js"
 import { createModel } from "../functions/createModel.js"
@@ -38,11 +33,12 @@ class Survey {
         const modelType = i as ModelType
         const model = createModel(modelType)
         model.setPersona(persona)
-        model.initPersona(this.questions.length)
+        await model.initPersona(this.questions.length)
         for (const question of this.questions) {
-          model.generateResponse(question)
+          await model.generateResponse(question)
         }
         const modelResults = model.getResults() as Array<Result>
+        console.log("Results", modelResults)
         this.addResult(modelResults, modelType, persona)
       }
     }

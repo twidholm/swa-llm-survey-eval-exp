@@ -293,6 +293,15 @@ export const questions: Array<Question> = [
     ],
   },
   {
+    id: "Q33_3",
+    text: "Stimmen Sie den folgenden Aussagen zu, lehnen Sie sie ab oder stimmen Sie weder zu noch lehnen Sie sie ab? Wenn Arbeitsplätze knapp sind, sollten Männer mehr Recht auf einen Arbeitsplatz haben als Frauen",
+    answer_options: [
+      { code: 1, optionText: "Stimme zu" },
+      { code: 2, optionText: "Stimme nicht zu" },
+      { code: 3, optionText: "Weder noch" },
+    ],
+  },
+  {
     id: "Q34",
     text: ",,Wenn die Arbeitsplätze knapp sind, sollten die Arbeitgeber Deutsche gegenüber Ausländern vorziehen''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
@@ -304,6 +313,15 @@ export const questions: Array<Question> = [
     ],
   },
   {
+    id: "Q34_3",
+    text: "Stimmen Sie den folgenden Aussagen zu, lehnen Sie sie ab oder stimmen Sie weder zu noch lehnen Sie sie ab? Wenn Arbeitsplätze knapp sind, sollten Arbeitgeber Einheimischen den Vorzug vor Einwanderern geben.",
+    answer_options: [
+      { code: 1, optionText: "Stimme zu" },
+      { code: 2, optionText: "Stimme nicht zu" },
+      { code: 3, optionText: "Weder noch" },
+    ],
+  },
+  {
     id: "Q35",
     text: ",,Wenn eine Frau mehr Geld verdient als ihr Mann, führt das fast zwangsläufig zu Problemen.''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
@@ -312,6 +330,15 @@ export const questions: Array<Question> = [
       { code: 3, optionText: "Weder noch" },
       { code: 4, optionText: "Stimme nicht zu" },
       { code: 5, optionText: "Stimme überhaupt nicht zu" },
+    ],
+  },
+  {
+    id: "Q35_3",
+    text: "Stimmen Sie den folgenden Aussagen zu, lehnen Sie sie ab oder stimmen Sie weder zu noch lehnen Sie sie ab? Es ist ein Problem, wenn Frauen mehr Einkommen haben als der Mann",
+    answer_options: [
+      { code: 1, optionText: "Stimme zu" },
+      { code: 2, optionText: "Stimme nicht zu" },
+      { code: 3, optionText: "Weder noch" },
     ],
   },
   {
@@ -2889,7 +2916,6 @@ export const questions: Array<Question> = [
       { code: 2, optionText: "Ziemlich verbunden" },
       { code: 3, optionText: "Nicht sehr verbunden" },
       { code: 4, optionText: "Überhaupt nicht verbunden" },
-      ,
     ],
   },
   {

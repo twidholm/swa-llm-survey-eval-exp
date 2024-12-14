@@ -1,6 +1,6 @@
 import dotenv from "dotenv"
 import Survey from "./survey/Survey.js"
-import Evaluator from "./eval/Evaluator.js"
+import { evaluate } from "./eval/Evaluator.js"
 import { performQuestionQuery } from "./functions/performQuestionQuery.js"
 import { questions } from "./data/data_set_questions/questions.js"
 import { personas_overall_dist_small } from "./data/data_set_personas/personas_small_overall_german_dist.js"
@@ -14,7 +14,6 @@ dotenv.config()
 
 // Zugriff auf die Umgebungsvariablen
 async function main() {
-  // Frage-Datensatz auswählen
   const questionDatasetResponse = await performQuestionQuery(
     "What question dataset do you want to choose?",
     ["small (10)", "large (full)"]
@@ -54,14 +53,10 @@ async function main() {
   await survey.run()
   const surveyResults = survey.getSurveyResults()
   console.log("Survey done...")
-  // console.log("Here are the results: ", surveyResults)
+  console.log("Here are the results: ", surveyResults)
 
-  // console.log("Starting Evaluation...")
-  // const evaluator = new Evaluator(surveyResults)
-  // const evaluationResults = evaluator.evaluate()
-  // console.log("Evaluation Results: ", evaluationResults)
-
-  // Abfrage, ob eine weitere Umfrage durchgeführt werden soll
+  console.log("Starting Evaluation...")
+  evaluate()
 
   console.log("Exiting program. Goodbye!")
 }

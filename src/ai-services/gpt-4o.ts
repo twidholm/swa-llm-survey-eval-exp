@@ -11,7 +11,7 @@ import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
 dotenv.config()
 
 class Gpt_Ai extends Model {
-  private persona: Persona
+  private persona: Persona | null
   private readonly instance = new OpenAI({
     apiKey: process.env.GPT_API_Key, // API Key aus der .env-Datei
   })
@@ -44,23 +44,25 @@ class Gpt_Ai extends Model {
   }
 
   public async initPersona(questionCount: number): Promise<void> {
-    const personaText = createPersonaPrompt(this.persona, questionCount)
-    this.addMessage("user", personaText)
-    try {
-      const response = (await this.instance.chat.completions.create({
-        model: "gpt-4o",
-        messages: [...this.messages],
-        temperature: 0.2,
-      })) as OpenAI.Chat.ChatCompletion
+    if (this.persona) {
+      const personaText = createPersonaPrompt(this.persona, questionCount)
+      this.addMessage("user", personaText)
+      try {
+        const response = (await this.instance.chat.completions.create({
+          model: "gpt-4o",
+          messages: [...this.messages],
+          temperature: 0.2,
+        })) as OpenAI.Chat.ChatCompletion
 
-      const responseContent = response.choices?.[0]?.message?.content
-      if (!responseContent) {
-        throw new Error("No response received from the model.")
+        const responseContent = response.choices?.[0]?.message?.content
+        if (!responseContent) {
+          throw new Error("No response received from the model.")
+        }
+
+        this.addMessage("assistant", responseContent)
+      } catch (error) {
+        console.error(error)
       }
-
-      this.addMessage("assistant", responseContent)
-    } catch (error) {
-      console.error(error)
     }
   }
 
@@ -76,8 +78,11 @@ class Gpt_Ai extends Model {
     })
   }
 
-  public getPersona(): Persona {
-    return this.persona
+  public getPersona(): Persona | null {
+    if (this.persona) {
+      return this.persona
+    }
+    return null
   }
 
   public getResults(): Array<Result> {

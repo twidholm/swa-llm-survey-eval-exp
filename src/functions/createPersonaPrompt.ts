@@ -11,7 +11,7 @@ export function createPersonaPrompt(persona: Persona, qcount: number) {
     Deine Soziale Klasse ist  ${persona.demographics.socialClass}.
     Dein Bildungsstand ist  ${persona.demographics.education}.
     Du bist zurzeit ${persona.demographics.employment}.
-    Du bekennst dich zur Religion ${persona.demographics.residence}.
+    Du lebst in einer ${persona.demographics.residence}.
 
     Deine politische Ideologie ist ${persona.covariates.politicalOrientation} und du bist Mitglied der Partei ${persona.covariates.politicalMembership}.
     Dir werden ${qcount}-Multiple-Choice-Fragen gestellt, die du bitte jedes Mal mit einer der vorgegeben Antwortmöglichkeiten beantwortest.

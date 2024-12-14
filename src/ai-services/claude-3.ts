@@ -6,15 +6,16 @@ import Model from "./model.js"
 import { Result } from "../types/Result.js"
 import { createPersonaPrompt } from "../functions/createPersonaPrompt.js"
 import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
+import { ModelType } from "../types/ModelType.js"
 
 class Claude_Ai extends Model {
   private readonly instance = new Anthropic({
     apiKey: process.env.Claude_API_KEY,
   })
-  private persona: Persona
+  private persona: Persona | null
   private messages: Array<any>
 
-  constructor(modelType) {
+  constructor(modelType: ModelType) {
     super(modelType)
     this.messages = [] // Initialize messages array
     this.persona = null // Initialize persona
@@ -47,23 +48,25 @@ class Claude_Ai extends Model {
     }
   }
   public async initPersona(questionCount: number) {
-    const personaText = createPersonaPrompt(this.persona, questionCount)
-    this.addMessage("user", personaText)
-    try {
-      const params: Anthropic.MessageCreateParams = {
-        max_tokens: 1024,
-        messages: this.messages,
-        model: "claude-3-opus-20240229",
-        temperature: 0.2,
-      }
-      const response = await this.instance.messages.create(params)
+    if (this.persona) {
+      const personaText = createPersonaPrompt(this.persona, questionCount)
+      this.addMessage("user", personaText)
+      try {
+        const params: Anthropic.MessageCreateParams = {
+          max_tokens: 1024,
+          messages: this.messages,
+          model: "claude-3-opus-20240229",
+          temperature: 0.2,
+        }
+        const response = await this.instance.messages.create(params)
 
-      if (response.content[0].type === "text") {
-        const text = response.content[0].text
-        this.addMessage("assistant", text)
+        if (response.content[0].type === "text") {
+          const text = response.content[0].text
+          this.addMessage("assistant", text)
+        }
+      } catch (error) {
+        console.error(error)
       }
-    } catch (error) {
-      console.error(error)
     }
   }
   public addMessage(role: string, content: string) {

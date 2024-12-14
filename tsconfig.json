@@ -4,7 +4,8 @@
     "moduleResolution": "nodenext",
     "target": "ES6", // Modernes JavaScript
     "sourceMap": true,
-    "outDir": "./dist" // Kompilierte Dateien
+    "outDir": "./dist", // Kompilierte Dateien
+    "strict": true
   },
   "include": ["src/**/*"]
 }

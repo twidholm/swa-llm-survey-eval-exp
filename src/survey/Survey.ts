@@ -5,19 +5,27 @@ import { ModelType } from "../types/ModelType.js"
 import { createModel } from "../functions/createModel.js"
 import { Persona } from "../types/Persona.js"
 import { Question } from "../types/Question.js"
-
+import { client } from "../db/MongoDBClient.js"
+import { Db, MongoClient } from "mongodb"
+import * as fs from "fs"
 dotenv.config()
 
 class Survey {
   private surveyResults: Array<PersonaModelResult> = []
   private questions: Array<Question>
   private personas: Array<Persona>
+  // private db: Db
   constructor(personas: Array<Persona>, questions: Array<Question>) {
     this.personas = personas
     this.questions = questions
+    // this.db = db
   }
 
-  private addResult(modelResults, modelType, persona) {
+  private addResult(
+    modelResults: Array<Result>,
+    modelType: ModelType,
+    persona: Persona
+  ) {
     this.surveyResults.push({
       results: modelResults,
       modeltype: modelType,
@@ -27,6 +35,24 @@ class Survey {
   public getSurveyResults() {
     return this.surveyResults
   }
+  public async saveResults() {
+    const jsonString = JSON.stringify(this.surveyResults, null, 2)
+    try {
+      fs.writeFile("results.json", jsonString, (err) => {
+        if (err) {
+          console.error("Fehler beim Speichern der Datei:", err)
+        } else {
+          console.log(
+            'Die Ergebnisse wurden erfolgreich in "results.json" gespeichert.'
+          )
+        }
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  // erste zwei Resultate weglassen, da keine Frage des Fragebogens
+  // \n entfernen
   async run() {
     for (const persona of this.personas) {
       for (let i = 0; i <= 3; i++) {
@@ -38,10 +64,12 @@ class Survey {
           await model.generateResponse(question)
         }
         const modelResults = model.getResults() as Array<Result>
+
         console.log("Results", modelResults)
         this.addResult(modelResults, modelType, persona)
       }
     }
+    this.saveResults()
   }
 }
 

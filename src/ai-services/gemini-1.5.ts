@@ -11,18 +11,26 @@ import { Question } from "../types/Question.js"
 import { Result } from "../types/Result.js"
 import { createPersonaPrompt } from "../functions/createPersonaPrompt.js"
 import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
+import { ModelType } from "../types/ModelType.js"
 dotenv.config()
 
 class Gemini_Ai extends Model {
-  private readonly instance = new GoogleGenerativeAI(process.env.Gemini_API_Key)
-  private persona: Persona
+  private readonly Api_Key = process.env.Gemini_API_Key
+
+  private readonly instance
+  private persona: Persona | null
 
   private messages: Array<any>
 
   private readonly model: GenerativeModel
   private chat: ChatSession
-  constructor(modelType) {
+  constructor(modelType: ModelType) {
     super(modelType)
+    if (this.Api_Key) {
+      this.instance = new GoogleGenerativeAI(this.Api_Key)
+    } else {
+      this.instance = new GoogleGenerativeAI("")
+    }
     this.messages = [] // Initialize messages array
     this.persona = null // Initialize persona
     this.model = this.instance.getGenerativeModel({
@@ -49,13 +57,15 @@ class Gemini_Ai extends Model {
     }
   }
   public async initPersona(questionCount: number) {
-    const personaText = createPersonaPrompt(this.persona, questionCount)
-    try {
-      const response = await this.chat.sendMessage(personaText)
-      this.addMessage("user", personaText)
-      this.addMessage("assistent", response.response.text())
-    } catch (error) {
-      console.error(error)
+    if (this.persona) {
+      const personaText = createPersonaPrompt(this.persona, questionCount)
+      try {
+        const response = await this.chat.sendMessage(personaText)
+        this.addMessage("user", personaText)
+        this.addMessage("assistent", response.response.text())
+      } catch (error) {
+        console.error(error)
+      }
     }
   }
   public addMessage(role: string, content: string) {

@@ -6,16 +6,17 @@ import { text } from "stream/consumers"
 import { Result } from "../types/Result.js"
 import { createPersonaPrompt } from "../functions/createPersonaPrompt.js"
 import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
+import { ModelType } from "../types/ModelType.js"
 
 class Grok_Ai extends Model {
   private readonly instance = new OpenAI({
     apiKey: process.env.Grok_API_Key,
     baseURL: "https://api.x.ai/v1",
   })
-  private persona: Persona
+  private persona: Persona | null
   private messages: Array<any>
 
-  constructor(modelType) {
+  constructor(modelType: ModelType) {
     super(modelType)
     this.messages = [] // Initialize messages array
     this.persona = null // Initialize persona
@@ -43,17 +44,21 @@ class Grok_Ai extends Model {
     }
   }
   public async initPersona(questionCount: number) {
-    const personaText = createPersonaPrompt(this.persona, questionCount)
-    this.addMessage("user", personaText)
-    try {
-      const response = (await this.instance.chat.completions.create({
-        model: "grok-beta",
-        messages: [...this.messages],
-        temperature: 0.2,
-      })) as OpenAI.Chat.ChatCompletion
-      this.addMessage("assistant", response.choices[0].message.content)
-    } catch (error) {
-      console.error(error)
+    if (this.persona) {
+      const personaText = createPersonaPrompt(this.persona, questionCount)
+      this.addMessage("user", personaText)
+      try {
+        const response = (await this.instance.chat.completions.create({
+          model: "grok-beta",
+          messages: [...this.messages],
+          temperature: 0.2,
+        })) as OpenAI.Chat.ChatCompletion
+        if (response.choices[0].message.content) {
+          this.addMessage("assistant", response.choices[0].message.content)
+        }
+      } catch (error) {
+        console.error(error)
+      }
     }
   }
   public setPersona(persona: any): void {

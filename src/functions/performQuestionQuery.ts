@@ -1,8 +1,8 @@
 import inquirer from "inquirer"
 
 export async function performQuestionQuery(
-  questionText,
-  options
+  questionText: string,
+  options: Array<string>
 ): Promise<string> {
   const response = await inquirer.prompt([
     {

@@ -2816,73 +2816,66 @@ export const human_results: Array<HumanResult> = [
     questionId: "Q267",
     answerdistribution: [
       { code: 1, percentage: 0.3 },
-      { code: 2, percentage: 0.2 },
+      { code: 2, percentage: 0.1 },
       { code: 3, percentage: 0.1 },
       { code: 4, percentage: 0.1 },
-      { code: 5, percentage: 0.3 },
-      { code: 6, percentage: 0.5 },
-      { code: 7, percentage: 0.1 },
-      { code: 8, percentage: 0.1 },
-      { code: 9, percentage: 0.2 },
+      { code: 5, percentage: 0.1 },
+      { code: 6, percentage: 0.1 },
+      { code: 7, percentage: 0.3 },
+      { code: 8, percentage: 0.5 },
+      { code: 9, percentage: 0.1 },
       { code: 10, percentage: 0.1 },
-      { code: 11, percentage: 0.1 },
+      { code: 11, percentage: 0.2 },
       { code: 12, percentage: 0.1 },
       { code: 13, percentage: 0.1 },
-      { code: 14, percentage: 0.5 },
-      { code: 15, percentage: 0.3 },
-      { code: 16, percentage: 0.1 },
-      { code: 17, percentage: 83.2 },
+      { code: 14, percentage: 0.1 },
+      { code: 15, percentage: 0.1 },
+      { code: 16, percentage: 0.5 },
+      { code: 17, percentage: 0.1 },
       { code: 18, percentage: 0.1 },
-      { code: 19, percentage: 0.5 },
+      { code: 19, percentage: 0.3 },
       { code: 20, percentage: 0.1 },
-      { code: 21, percentage: 0.7 },
-      { code: 22, percentage: "Indien" },
-      { code: 23, percentage: "Iran" },
+      { code: 21, percentage: 83.2 },
+      { code: 22, percentage: 0.1 },
+      { code: 23, percentage: 0.5 },
       { code: 24, percentage: 0.1 },
-      { code: 25, percentage: 0.2 },
-      { code: 26, percentage: 0.5 },
-      { code: 27, percentage: "Südkorea" },
-      { code: 28, percentage: 0.1 },
+      { code: 25, percentage: 0.7 },
+      { code: 26, percentage: 0.1 },
+      { code: 27, percentage: 0.2 },
+      { code: 28, percentage: 0.5 },
       { code: 29, percentage: 0.1 },
       { code: 30, percentage: 0.1 },
       { code: 31, percentage: 0.1 },
-      { code: 32, percentage: 0.2 },
+      { code: 32, percentage: 0.1 },
       { code: 33, percentage: 0.1 },
-      { code: 34, percentage: "Mexiko" },
-      { code: 35, percentage: 0.2 },
-      { code: 36, percentage: 0.1 },
-      { code: 37, percentage: 0.3 },
-      { code: 38, percentage: "Neuseeland" },
-      { code: 39, percentage: "Nikaragua" },
-      { code: 40, percentage: "Nigerien" },
-      { code: 41, percentage: "Norwegen" },
-      { code: 42, percentage: 0.1 },
-      { code: 43, percentage: 2.3 },
-      { code: 44, percentage: 0.9 },
-      { code: 45, percentage: 1.4 },
-      { code: 46, percentage: 0.6 },
+      { code: 34, percentage: 0.2 },
+      { code: 35, percentage: 0.1 },
+      { code: 36, percentage: 0.2 },
+      { code: 37, percentage: 0.1 },
+      { code: 38, percentage: 0.3 },
+      { code: 39, percentage: 0.1 },
+      { code: 40, percentage: 2.3 },
+      { code: 41, percentage: 0.9 },
+      { code: 42, percentage: 1.4 },
+      { code: 43, percentage: 0.6 },
+      { code: 44, percentage: 0.1 },
+      { code: 45, percentage: 0.1 },
+      { code: 46, percentage: 0.1 },
       { code: 47, percentage: 0.1 },
       { code: 48, percentage: 0.1 },
-      { code: 49, percentage: "Slowenien" },
+      { code: 49, percentage: 0.7 },
       { code: 50, percentage: 0.1 },
-      { code: 51, percentage: "Südafrika" },
-      { code: 52, percentage: "Spanien" },
+      { code: 51, percentage: 0.1 },
+      { code: 52, percentage: 0.1 },
       { code: 53, percentage: 0.1 },
-      { code: 54, percentage: 0.1 },
-      { code: 55, percentage: 0.7 },
-      { code: 56, percentage: 0.1 },
-      { code: 57, percentage: 0.1 },
-      { code: 58, percentage: 0.1 },
+      { code: 54, percentage: 1.7 },
+      { code: 56, percentage: 0.3 },
+      { code: 57, percentage: 0.2 },
+      { code: 58, percentage: 0.3 },
       { code: 59, percentage: 0.1 },
-      { code: 60, percentage: 1.7 },
-      { code: 61, percentage: "Turkmenistan" },
-      { code: 62, percentage: 0.3 },
-      { code: 63, percentage: 0.2 },
-      { code: 64, percentage: 0.3 },
-      { code: 65, percentage: 0.1 },
-      { code: 66, percentage: 0.1 },
-      { code: 67, percentage: 0.1 },
-      { code: 68, percentage: 0.7 },
+      { code: 60, percentage: 0.1 },
+      { code: 61, percentage: 0.1 },
+      { code: 62, percentage: 0.7 },
     ],
   },
   {
@@ -2892,70 +2885,62 @@ export const human_results: Array<HumanResult> = [
       { code: 2, percentage: 0.2 },
       { code: 3, percentage: 0.1 },
       { code: 4, percentage: 0.1 },
-      { code: 5, percentage: 0.5 },
+      { code: 5, percentage: 0.1 },
       { code: 6, percentage: 0.5 },
-      { code: 7, percentage: 0.1 },
+      { code: 7, percentage: 0.5 },
       { code: 8, percentage: 0.1 },
       { code: 9, percentage: 0.1 },
       { code: 10, percentage: 0.1 },
-      { code: 11, percentage: 0.2 },
-      { code: 12, percentage: 0.1 },
+      { code: 11, percentage: 0.1 },
+      { code: 12, percentage: 0.2 },
       { code: 13, percentage: 0.1 },
-      { code: 14, percentage: 0.3 },
-      { code: 15, percentage: 0.1 },
+      { code: 14, percentage: 0.1 },
+      { code: 15, percentage: 0.3 },
       { code: 16, percentage: 0.1 },
-      { code: 17, percentage: 83.6 },
-      { code: 18, percentage: "Ghana" },
+      { code: 17, percentage: 0.1 },
+      { code: 18, percentage: 83.6 },
       { code: 19, percentage: 0.3 },
       { code: 20, percentage: 0.1 },
       { code: 21, percentage: 0.5 },
-      { code: 22, percentage: "Indien" },
-      { code: 23, percentage: "Iran" },
-      { code: 24, percentage: 0.1 },
-      { code: 25, percentage: 0.3 },
-      { code: 26, percentage: 0.5 },
-      { code: 27, percentage: "Südkorea" },
+      { code: 22, percentage: 0.1 },
+      { code: 23, percentage: 0.1 },
+      { code: 24, percentage: 0.3 },
+      { code: 25, percentage: 0.5 },
+      { code: 26, percentage: 0.1 },
+      { code: 27, percentage: 0.1 },
       { code: 28, percentage: 0.1 },
       { code: 29, percentage: 0.1 },
       { code: 30, percentage: 0.1 },
       { code: 31, percentage: 0.1 },
       { code: 32, percentage: 0.1 },
       { code: 33, percentage: 0.1 },
-      { code: 34, percentage: "Mexiko" },
-      { code: 35, percentage: 0.2 },
+      { code: 34, percentage: 0.2 },
+      { code: 35, percentage: 0.1 },
       { code: 36, percentage: 0.1 },
       { code: 37, percentage: 0.1 },
-      { code: 38, percentage: "Neuseeland" },
-      { code: 39, percentage: "Nikaragua" },
-      { code: 40, percentage: "Nigerien" },
-      { code: 41, percentage: 0.1 },
-      { code: 42, percentage: 0.1 },
-      { code: 43, percentage: 2.2 },
-      { code: 44, percentage: 0.8 },
-      { code: 45, percentage: 1.6 },
-      { code: 46, percentage: 0.7 },
-      { code: 47, percentage: "Singapur" },
-      { code: 48, percentage: 0.1 },
+      { code: 38, percentage: 0.1 },
+      { code: 39, percentage: 2.2 },
+      { code: 40, percentage: 0.8 },
+      { code: 41, percentage: 1.6 },
+      { code: 42, percentage: 0.7 },
+      { code: 43, percentage: 0.1 },
+      { code: 44, percentage: 0.1 },
+      { code: 45, percentage: 0.1 },
+      { code: 46, percentage: 0.1 },
+      { code: 47, percentage: 0.1 },
+      { code: 48, percentage: 0.7 },
       { code: 49, percentage: 0.1 },
       { code: 50, percentage: 0.1 },
-      { code: 51, percentage: "Südafrika" },
-      { code: 52, percentage: "Spanien" },
-      { code: 53, percentage: 0.1 },
-      { code: 54, percentage: 0.1 },
-      { code: 55, percentage: 0.7 },
+      { code: 51, percentage: 0.1 },
+      { code: 52, percentage: 0.1 },
+      { code: 53, percentage: 1.8 },
+      { code: 54, percentage: 0.4 },
+      { code: 55, percentage: 0.2 },
       { code: 56, percentage: 0.1 },
       { code: 57, percentage: 0.1 },
-      { code: 58, percentage: 0.1 },
+      { code: 58, percentage: 0.5 },
       { code: 59, percentage: 0.1 },
-      { code: 60, percentage: 1.8 },
-      { code: 61, percentage: "Turkmenistan" },
-      { code: 62, percentage: 0.4 },
-      { code: 63, percentage: 0.2 },
-      { code: 64, percentage: 0.1 },
-      { code: 65, percentage: 0.1 },
-      { code: 66, percentage: 0.5 },
-      { code: 67, percentage: 0.1 },
-      { code: 68, percentage: 0.5 },
+      { code: 60, percentage: 0.5 },
     ],
   },
   {
@@ -3017,14 +3002,14 @@ export const human_results: Array<HumanResult> = [
       },
     ],
   },
-  {
-    questionId: "Q273a_de",
-    text: "Leben Sie mit einem Partner / einer Partnerin zusammen?",
-    answerdistribution: [
-      { code: 1, percentage: "Ja" },
-      { code: 2, percentage: "Nein" },
-    ],
-  },
+  // {
+  //   questionId: "Q273a_de",
+  //   text: "Leben Sie mit einem Partner / einer Partnerin zusammen?",
+  //   answerdistribution: [
+  //     { code: 1, percentage: "Ja" },
+  //     { code: 2, percentage: "Nein" },
+  //   ],
+  // },
   {
     questionId: "Q274",
     answerdistribution: [
@@ -3039,432 +3024,160 @@ export const human_results: Array<HumanResult> = [
     ],
   },
   {
-    questionId: "Q275_de",
+    questionId: "Q275",
     answerdistribution: [
-      { code: 1, percentage: "Grundschule nicht beendet" },
+      { code: 1, percentage: 0.9 },
       {
         code: 2,
-        percentage:
-          "Grundschule beendet, aber (noch) kein Abschluss einer weiterführenden Schule",
+        percentage: 0.7,
       },
       {
         code: 3,
-        percentage:
-          "Volks-/Hauptschulabschluss bzw. Polytechnische Oberschule mit Abschluss 8. oder 9. Klasse",
+        percentage: 9.6,
       },
       {
         code: 4,
-        percentage:
-          "Mittlere Reife/Realschulabschluss bzw. Polytechnische Oberschule mit Abschluss 10. Klasse",
+        percentage: 46.7,
       },
       {
         code: 5,
-        percentage: "Fachhochschulreife (Abschluss einer Fachoberschule etc.)",
+        percentage: 7.5,
       },
       {
         code: 6,
-        percentage:
-          "Abitur bzw. Erweiterte Oberschule mit Abschluss 12. Klasse (Hochschulreife)",
+        percentage: 7.4,
       },
-      { code: 7, percentage: "Anderer Schulabschluss" },
+      { code: 7, percentage: 11.5 },
+      { code: 8, percentage: 13.4 },
+      { code: 9, percentage: 2.2 },
+      { code: 10, percentage: 0 },
     ],
   },
   {
-    questionId: "Q275a_de",
-    text: "Was ist der höchste Studienabschluss, den Sie erreicht haben?",
+    questionId: "Q275_R",
     answerdistribution: [
-      { code: 1, percentage: "Kein Studienabschluss" },
-      { code: 2, percentage: "Zwischenprüfung, Vordiplom" },
-      { code: 3, percentage: "Diplom einer Verwaltungs-/Fachhochschule" },
-      { code: 4, percentage: "Diplom einer Berufsakademie" },
-      { code: 5, percentage: "Bachelor einer Verwaltungs-/Fachhochschule" },
-      { code: 6, percentage: "Bachelor einer Berufsakademie" },
-      {
-        code: 7,
-        percentage:
-          "Bachelor einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      { code: 8, percentage: "Master einer Verwaltungs-/Fachhochschule" },
-      { code: 9, percentage: "Master einer Berufsakademie" },
-      {
-        code: 10,
-        percentage:
-          "Diplom, Magister, Staatsexamen einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      {
-        code: 11,
-        percentage:
-          "Master oder Aufbaustudium einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      { code: 12, percentage: "Promotion; Habilitation" },
-      { code: 13, percentage: "Anderer Studienabschluss" },
+      { code: 1, percentage: 11.2 },
+      { code: 2, percentage: 54.1 },
+      { code: 3, percentage: 34.5 },
     ],
   },
+
   {
-    questionId: "Q275b_de",
-    text: "Was ist der höchste berufliche Ausbildungsabschluss, den Sie erreicht haben?",
+    questionId: "Q276",
     answerdistribution: [
-      { code: 1, percentage: "Kein Ausbildungsabschluss" },
+      { code: 1, percentage: 0.7 },
       {
         code: 2,
-        percentage:
-          "Abschlusszeugnis Berufsgrundbildungsjahr, Berufsfachschule (Berufliche Grundkenntnisse), medizinische Hilfsberufe (1-jährige Schulen des Gesundheitswesens)",
+        percentage: 0.8,
       },
       {
         code: 3,
-        percentage:
-          "Beruflich-betriebliche Anlernzeit mit Abschlusszeugnis, aber keine Lehre; Teilfacharbeiterabschluss",
+        percentage: 7.8,
       },
       {
         code: 4,
-        percentage:
-          "Abschlusszeugnis für medizinische Assistenten, Krankenschwestern/ -pfleger (2- bis 3-jährige Schulen des Gesundheitswesens)",
-      },
-      { code: 5, percentage: "Laufbahnprüfung für den mittleren Dienst" },
-      {
-        code: 6,
-        percentage: "Abgeschlossene gewerbliche oder landwirtschaftliche Lehre",
-      },
-      { code: 7, percentage: "Abgeschlossene kaufmännische Lehre" },
-      {
-        code: 8,
-        percentage:
-          "Berufsqualifizierender Abschluss einer Berufsfachschule/eines Kolleg",
-      },
-      { code: 9, percentage: "Berufliche Zweitausbildung" },
-      {
-        code: 10,
-        percentage:
-          "Meister-/Techniker- oder gleichwertiger Fachschulabschluss (inkl. Fachschule der ehemaligen DDR); Abschluss einer Fachakademie (Bayern)",
-      },
-      {
-        code: 11,
-        percentage:
-          "Anderer beruflicher Ausbildungsabschluss (NOTIEREN, WELCHER)",
-      },
-    ],
-  },
-  {
-    questionId: "Q276_de",
-    text: "Was ist der höchste allgemeinbildende Schulabschluss, den Ihr (Ehe-)Partner / Ihre (Ehe-)Partnerin erreicht hat ?",
-    answerdistribution: [
-      { code: 1, percentage: "Grundschule nicht beendet" },
-      {
-        code: 2,
-        percentage:
-          "Grundschule beendet, aber (noch) kein Abschluss einer weiterführenden Schule",
-      },
-      {
-        code: 3,
-        percentage:
-          "Volks-/Hauptschulabschluss bzw. Polytechnische Oberschule mit Abschluss 8. oder 9. Klasse",
-      },
-      {
-        code: 4,
-        percentage:
-          "Mittlere Reife/Realschulabschluss bzw. Polytechnische Oberschule mit Abschluss 10. Klasse",
+        percentage: 50.1,
       },
       {
         code: 5,
-        percentage: "Fachhochschulreife (Abschluss einer Fachoberschule etc.)",
+        percentage: 8.1,
       },
       {
         code: 6,
-        percentage:
-          "Abitur bzw. Erweiterte Oberschule mit Abschluss 12. Klasse (Hochschulreife)",
+        percentage: 7.2,
       },
-      { code: 7, percentage: "Anderer Schulabschluss" },
+      { code: 7, percentage: 7.3 },
+      { code: 8, percentage: 15.2 },
+      { code: 9, percentage: 2.5 },
+      { code: 10, percentage: 0 },
     ],
   },
   {
-    questionId: "Q276a_de",
-    text: "Was ist der höchste Studienabschluss, den Ihr (Ehe-)Partner / Ihre (Ehe-)Partnerin erreicht hat?",
+    questionId: "Q276_R",
     answerdistribution: [
-      { code: 1, percentage: "Kein Studienabschluss" },
-      { code: 2, percentage: "Zwischenprüfung, Vordiplom" },
-      { code: 3, percentage: "Diplom einer Verwaltungs-/Fachhochschule" },
-      { code: 4, percentage: "Diplom einer Berufsakademie" },
-      { code: 5, percentage: "Bachelor einer Verwaltungs-/Fachhochschule" },
-      { code: 6, percentage: "Bachelor einer Berufsakademie" },
-      {
-        code: 7,
-        percentage:
-          "Bachelor einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      { code: 8, percentage: "Master einer Verwaltungs-/Fachhochschule" },
-      { code: 9, percentage: "Master einer Berufsakademie" },
-      {
-        code: 10,
-        percentage:
-          "Diplom, Magister, Staatsexamen einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      {
-        code: 11,
-        percentage:
-          "Master oder Aufbaustudium einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      { code: 12, percentage: "Promotion; Habilitation" },
-      { code: 13, percentage: "Anderer Studienabschluss" },
+      { code: 1, percentage: "Lower" },
+      { code: 2, percentage: "Middle" },
+      { code: 3, percentage: "Higher" },
     ],
   },
   {
-    questionId: "Q276b_de",
-    text: "Was ist der höchste berufliche Ausbildungsabschluss, den Ihr (Ehe-)Partner / Ihre (Ehe-)Partnerin erreicht hat?",
+    questionId: "Q277",
     answerdistribution: [
-      { code: 1, percentage: "Kein Ausbildungsabschluss" },
+      { code: 1, percentage: 6.7 },
       {
         code: 2,
-        percentage:
-          "Abschlusszeugnis Berufsgrundbildungsjahr, Berufsfachschule (Berufliche Grundkenntnisse), medizinische Hilfsberufe (1-jährige Schulen des Gesundheitswesens)",
+        percentage: 4.4,
       },
       {
         code: 3,
-        percentage:
-          "Beruflich-betriebliche Anlernzeit mit Abschlusszeugnis, aber keine Lehre; Teilfacharbeiterabschluss",
+        percentage: 26.6,
       },
       {
         code: 4,
-        percentage:
-          "Abschlusszeugnis für medizinische Assistenten, Krankenschwestern/ -pfleger (2- bis 3-jährige Schulen des Gesundheitswesens)",
-      },
-      { code: 5, percentage: "Laufbahnprüfung für den mittleren Dienst" },
-      {
-        code: 6,
-        percentage: "Abgeschlossene gewerbliche oder landwirtschaftliche Lehre",
-      },
-      { code: 7, percentage: "Abgeschlossene kaufmännische Lehre" },
-      {
-        code: 8,
-        percentage:
-          "Berufsqualifizierender Abschluss einer Berufsfachschule/eines Kolleg",
-      },
-      { code: 9, percentage: "Berufliche Zweitausbildung" },
-      {
-        code: 10,
-        percentage:
-          "Meister-/Techniker- oder gleichwertiger Fachschulabschluss (inkl. Fachschule der ehemaligen DDR); Abschluss einer Fachakademie (Bayern)",
-      },
-      {
-        code: 11,
-        percentage:
-          "Anderer beruflicher Ausbildungsabschluss (NOTIEREN, WELCHER)",
-      },
-    ],
-  },
-  {
-    questionId: "Q277_de",
-    text: "Was ist der höchste allgemeinbildende Schulabschluss, den Ihre Mutter erreicht hat?",
-    answerdistribution: [
-      { code: 1, percentage: "Grundschule nicht beendet" },
-      {
-        code: 2,
-        percentage:
-          "Grundschule beendet, aber (noch) kein Abschluss einer weiterführenden Schule",
-      },
-      {
-        code: 3,
-        percentage:
-          "Volks-/Hauptschulabschluss bzw. Polytechnische Oberschule mit Abschluss 8. oder 9. Klasse",
-      },
-      {
-        code: 4,
-        percentage:
-          "Mittlere Reife/Realschulabschluss bzw. Polytechnische Oberschule mit Abschluss 10. Klasse",
+        percentage: 46.9,
       },
       {
         code: 5,
-        percentage: "Fachhochschulreife (Abschluss einer Fachoberschule etc.)",
+        percentage: 3.0,
       },
       {
         code: 6,
-        percentage:
-          "Abitur bzw. Erweiterte Oberschule mit Abschluss 12. Klasse (Hochschulreife)",
+        percentage: 1.4,
       },
-      { code: 7, percentage: "Anderer Schulabschluss" },
+      { code: 7, percentage: 2.7 },
+      { code: 8, percentage: 5.0 },
+      { code: 9, percentage: 0.6 },
+      { code: 10, percentage: 0 },
     ],
   },
   {
-    questionId: "Q277a_de",
-    text: "Was ist der höchste Studienabschluss, den Ihre Mutter erreicht hat?",
+    questionId: "Q277_R",
     answerdistribution: [
-      { code: 1, percentage: "Kein Studienabschluss" },
-      { code: 2, percentage: "Zwischenprüfung, Vordiplom" },
-      { code: 3, percentage: "Diplom einer Verwaltungs-/Fachhochschule" },
-      { code: 4, percentage: "Diplom einer Berufsakademie" },
-      { code: 5, percentage: "Bachelor einer Verwaltungs-/Fachhochschule" },
-      { code: 6, percentage: "Bachelor einer Berufsakademie" },
-      {
-        code: 7,
-        percentage:
-          "Bachelor einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      { code: 8, percentage: "Master einer Verwaltungs-/Fachhochschule" },
-      { code: 9, percentage: "Master einer Berufsakademie" },
-      {
-        code: 10,
-        percentage:
-          "Diplom, Magister, Staatsexamen einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      {
-        code: 11,
-        percentage:
-          "Master oder Aufbaustudium einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      { code: 12, percentage: "Promotion; Habilitation" },
-      { code: 13, percentage: "Anderer Studienabschluss" },
+      { code: 1, percentage: 37.7 },
+      { code: 2, percentage: 49.9 },
+      { code: 3, percentage: 9.7 },
     ],
   },
+
   {
-    questionId: "Q277b_de",
-    text: "Was ist der höchste berufliche Ausbildungsabschluss, den Ihre Mutter erreicht hat?",
+    questionId: "Q278",
     answerdistribution: [
-      { code: 1, percentage: "Kein Ausbildungsabschluss" },
+      { code: 1, percentage: 3.0 },
       {
         code: 2,
-        percentage:
-          "Abschlusszeugnis Berufsgrundbildungsjahr, Berufsfachschule (Berufliche Grundkenntnisse), medizinische Hilfsberufe (1-jährige Schulen des Gesundheitswesens)",
+        percentage: 2.0,
       },
       {
         code: 3,
-        percentage:
-          "Beruflich-betriebliche Anlernzeit mit Abschlusszeugnis, aber keine Lehre; Teilfacharbeiterabschluss",
+        percentage: 11.3,
       },
       {
         code: 4,
-        percentage:
-          "Abschlusszeugnis für medizinische Assistenten, Krankenschwestern/ -pfleger (2- bis 3-jährige Schulen des Gesundheitswesens)",
-      },
-      { code: 5, percentage: "Laufbahnprüfung für den mittleren Dienst" },
-      {
-        code: 6,
-        percentage: "Abgeschlossene gewerbliche oder landwirtschaftliche Lehre",
-      },
-      { code: 7, percentage: "Abgeschlossene kaufmännische Lehre" },
-      {
-        code: 8,
-        percentage:
-          "Berufsqualifizierender Abschluss einer Berufsfachschule/eines Kolleg",
-      },
-      { code: 9, percentage: "Berufliche Zweitausbildung" },
-      {
-        code: 10,
-        percentage:
-          "Meister-/Techniker- oder gleichwertiger Fachschulabschluss (inkl. Fachschule der ehemaligen DDR); Abschluss einer Fachakademie (Bayern)",
-      },
-      {
-        code: 11,
-        percentage:
-          "Anderer beruflicher Ausbildungsabschluss (NOTIEREN, WELCHER)",
-      },
-    ],
-  },
-  {
-    questionId: "Q278_de",
-    text: "Was ist der höchste allgemeinbildende Schulabschluss, den Ihr Vater erreicht hat?",
-    answerdistribution: [
-      { code: 1, percentage: "Grundschule nicht beendet" },
-      {
-        code: 2,
-        percentage:
-          "Grundschule beendet, aber (noch) kein Abschluss einer weiterführenden Schule",
-      },
-      {
-        code: 3,
-        percentage:
-          "Volks-/Hauptschulabschluss bzw. Polytechnische Oberschule mit Abschluss 8. oder 9. Klasse",
-      },
-      {
-        code: 4,
-        percentage:
-          "Mittlere Reife/Realschulabschluss bzw. Polytechnische Oberschule mit Abschluss 10. Klasse",
+        percentage: 52.4,
       },
       {
         code: 5,
-        percentage: "Fachhochschulreife (Abschluss einer Fachoberschule etc.)",
+        percentage: 3.3,
       },
       {
         code: 6,
-        percentage:
-          "Abitur bzw. Erweiterte Oberschule mit Abschluss 12. Klasse (Hochschulreife)",
+        percentage: 9.2,
       },
-      { code: 7, percentage: "Anderer Schulabschluss" },
+      { code: 7, percentage: 3.3 },
+      { code: 8, percentage: 9.3 },
+      { code: 9, percentage: 1.8 },
+      { code: 10, percentage: 0 },
     ],
   },
   {
-    questionId: "Q278a_de",
-    text: "Was ist der höchste Studienabschluss, den Ihr Vater erreicht hat?",
+    questionId: "Q278_R",
     answerdistribution: [
-      { code: 1, percentage: "Kein Studienabschluss" },
-      { code: 2, percentage: "Zwischenprüfung, Vordiplom" },
-      { code: 3, percentage: "Diplom einer Verwaltungs-/Fachhochschule" },
-      { code: 4, percentage: "Diplom einer Berufsakademie" },
-      { code: 5, percentage: "Bachelor einer Verwaltungs-/Fachhochschule" },
-      { code: 6, percentage: "Bachelor einer Berufsakademie" },
-      {
-        code: 7,
-        percentage:
-          "Bachelor einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      { code: 8, percentage: "Master einer Verwaltungs-/Fachhochschule" },
-      { code: 9, percentage: "Master einer Berufsakademie" },
-      {
-        code: 10,
-        percentage:
-          "Diplom, Magister, Staatsexamen einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      {
-        code: 11,
-        percentage:
-          "Master oder Aufbaustudium einer Universität, Kunst-, Musik- oder pädagogischen Hochschule",
-      },
-      { code: 12, percentage: "Promotion; Habilitation" },
-      { code: 13, percentage: "Anderer Studienabschluss" },
+      { code: 1, percentage: 16.3 },
+      { code: 2, percentage: 55.6 },
+      { code: 3, percentage: 23.6 },
     ],
   },
-  {
-    questionId: "Q278b_de",
-    text: "Was ist der höchste berufliche Ausbildungsabschluss, den Ihr Vater erreicht hat?",
-    answerdistribution: [
-      { code: 1, percentage: "Kein Ausbildungsabschluss" },
-      {
-        code: 2,
-        percentage:
-          "Abschlusszeugnis Berufsgrundbildungsjahr, Berufsfachschule (Berufliche Grundkenntnisse), medizinische Hilfsberufe (1-jährige Schulen des Gesundheitswesens)",
-      },
-      {
-        code: 3,
-        percentage:
-          "Beruflich-betriebliche Anlernzeit mit Abschlusszeugnis, aber keine Lehre; Teilfacharbeiterabschluss",
-      },
-      {
-        code: 4,
-        percentage:
-          "Abschlusszeugnis für medizinische Assistenten, Krankenschwestern/ -pfleger (2- bis 3-jährige Schulen des Gesundheitswesens)",
-      },
-      { code: 5, percentage: "Laufbahnprüfung für den mittleren Dienst" },
-      {
-        code: 6,
-        percentage: "Abgeschlossene gewerbliche oder landwirtschaftliche Lehre",
-      },
-      { code: 7, percentage: "Abgeschlossene kaufmännische Lehre" },
-      {
-        code: 8,
-        percentage:
-          "Berufsqualifizierender Abschluss einer Berufsfachschule/eines Kolleg",
-      },
-      { code: 9, percentage: "Berufliche Zweitausbildung" },
-      {
-        code: 10,
-        percentage:
-          "Meister-/Techniker- oder gleichwertiger Fachschulabschluss (inkl. Fachschule der ehemaligen DDR); Abschluss einer Fachakademie (Bayern)",
-      },
-      {
-        code: 11,
-        percentage:
-          "Anderer beruflicher Ausbildungsabschluss (NOTIEREN, WELCHER)",
-      },
-    ],
-  },
+
   {
     questionId: "Q279",
     answerdistribution: [

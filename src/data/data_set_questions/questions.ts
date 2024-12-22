@@ -63,7 +63,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q7",
-    text: "Ist gutes Benehmen als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist gutes Benehmen als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -71,7 +71,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q8",
-    text: "Ist Unabhängigkeit, Selbstständigkeit als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Unabhängigkeit, Selbstständigkeit als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -79,7 +79,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q9",
-    text: "Ist Fleiß als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Fleiß als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -87,7 +87,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q10",
-    text: "Ist Verantwortungsgefühl als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Verantwortungsgefühl als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -95,7 +95,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q11",
-    text: "Ist Vorstellungskraft als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Vorstellungskraft als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -103,7 +103,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q12",
-    text: "Ist Toleranz und Respekt gegenüber Mitmenschen als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Toleranz und Respekt gegenüber Mitmenschen als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -111,7 +111,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q13",
-    text: "Ist Sparsamkeit im Umgang mit Geld und Dingen als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Sparsamkeit im Umgang mit Geld und Dingen als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -119,7 +119,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q14",
-    text: "Ist Entschlossenheit als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Entschlossenheit als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -127,7 +127,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q15",
-    text: "Ist Religiöser Glaube als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Religiöser Glaube als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -135,7 +135,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q16",
-    text: "Ist Selbstlosigkeit als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Selbstlosigkeit als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -143,7 +143,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q17",
-    text: "Ist Selbstlosigkeit als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten wichtig?",
+    text: "Ist Selbstlosigkeit als Eigenschaft, die Kinder im Elternhaus vielleicht erlernen sollten, wichtig?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -243,7 +243,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q29",
-    text: ",,In politischen Führungspositionen sind Männer allgemein besser als Frauen.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,In politischen Führungspositionen sind Männer allgemein besser als Frauen''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -253,7 +253,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q30",
-    text: ",,Eine Hochschulausbildung ist für Jungen wichtiger als für Mädchen.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Eine Hochschulausbildung ist für Jungen wichtiger als für Mädchen''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -263,7 +263,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q31",
-    text: ",,Insgesamt sind Männer bessere Führungskräfte in der Wirtschaft als Frauen. ''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Insgesamt sind Männer bessere Führungskräfte in der Wirtschaft als Frauen''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -273,7 +273,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q32",
-    text: ",,Eine Hausfrau zu sein ist genauso erfüllend wieeine bezahlte Arbeit.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Eine Hausfrau zu sein ist genauso erfüllend wie eine bezahlte Arbeit''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -283,7 +283,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q33",
-    text: ",,Wenn die Arbeitsplätze knapp sind, haben Männer eher ein Recht auf Arbeit als Frauen.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Wenn die Arbeitsplätze knapp sind, haben Männer eher ein Recht auf Arbeit als Frauen''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -294,7 +294,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q33_3",
-    text: "Stimmen Sie den folgenden Aussagen zu, lehnen Sie sie ab oder stimmen Sie weder zu noch lehnen Sie sie ab? Wenn Arbeitsplätze knapp sind, sollten Männer mehr Recht auf einen Arbeitsplatz haben als Frauen",
+    text: "Stimmen Sie den folgenden Aussagen zu, lehnen Sie sie ab oder stimmen Sie weder zu noch lehnen Sie sie ab? ,,Wenn Arbeitsplätze knapp sind, sollten Männer mehr Recht auf einen Arbeitsplatz haben als Frauen",
     answer_options: [
       { code: 1, optionText: "Stimme zu" },
       { code: 2, optionText: "Stimme nicht zu" },
@@ -314,7 +314,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q34_3",
-    text: "Stimmen Sie den folgenden Aussagen zu, lehnen Sie sie ab oder stimmen Sie weder zu noch lehnen Sie sie ab? Wenn Arbeitsplätze knapp sind, sollten Arbeitgeber Einheimischen den Vorzug vor Einwanderern geben.",
+    text: "Stimmen Sie den folgenden Aussagen zu, lehnen Sie sie ab oder stimmen Sie weder zu noch lehnen Sie sie ab? ,,Wenn Arbeitsplätze knapp sind, sollten Arbeitgeber Einheimischen den Vorzug vor Einwanderern geben.",
     answer_options: [
       { code: 1, optionText: "Stimme zu" },
       { code: 2, optionText: "Stimme nicht zu" },
@@ -323,7 +323,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q35",
-    text: ",,Wenn eine Frau mehr Geld verdient als ihr Mann, führt das fast zwangsläufig zu Problemen.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Wenn eine Frau mehr Geld verdient als ihr Mann, führt das fast zwangsläufig zu Problemen''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -343,7 +343,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q36",
-    text: ",,Gleichgeschlechtliche Paare sind genauso gute Eltern wie andere Paare.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Gleichgeschlechtliche Paare sind genauso gute Eltern wie andere Paare''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -354,7 +354,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q37",
-    text: ",,Kinder zu haben ist eine Pflicht gegenüber der Gesellschaft.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Kinder zu haben ist eine Pflicht gegenüber der Gesellschaft''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -365,7 +365,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q38",
-    text: ",,Erwachsene Kinder haben die Pflicht, für die Betreuung und Pflege ihrer Eltern im Alter zu sorgen.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Erwachsene Kinder haben die Pflicht, für die Betreuung und Pflege ihrer Eltern im Alter zu sorgen''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -387,7 +387,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q40",
-    text: ",,Arbeit ist eine Verpflichtung gegenüber der Gesellschaft.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Arbeit ist eine Verpflichtung gegenüber der Gesellschaft''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -398,7 +398,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q41",
-    text: ",,Die Arbeit sollte immer an erster Stelle stehen, auch wenn das weniger Freizeitbedeutet.''. Wie sehr trifft diese Aussage für Sie zu?",
+    text: ",,Die Arbeit sollte immer an erster Stelle stehen, auch wenn das weniger Freizeit bedeutet''. Wie sehr trifft diese Aussage für Sie zu?",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -434,7 +434,7 @@ export const questions: Array<Question> = [
     answer_options: [
       { code: 1, optionText: "Begrüße ich" },
       { code: 2, optionText: "Ist mir egal" },
-      { code: 3, optionText: " Lehne ich ab" },
+      { code: 3, optionText: "Lehne ich ab" },
     ],
   },
   {
@@ -443,7 +443,7 @@ export const questions: Array<Question> = [
     answer_options: [
       { code: 1, optionText: "Begrüße ich" },
       { code: 2, optionText: "Ist mir egal" },
-      { code: 3, optionText: " Lehne ich ab" },
+      { code: 3, optionText: "Lehne ich ab" },
     ],
   },
   {
@@ -452,7 +452,7 @@ export const questions: Array<Question> = [
     answer_options: [
       { code: 1, optionText: "Begrüße ich" },
       { code: 2, optionText: "Ist mir egal" },
-      { code: 3, optionText: " Lehne ich ab" },
+      { code: 3, optionText: "Lehne ich ab" },
     ],
   },
   {
@@ -478,7 +478,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q48",
-    text: "Einige Leute meinen, dass sie ihr Leben völlig frei selbst bestimmen. Andere meinen, dass sie nur wenig Einfluss darauf haben, was mit ihnen geschieht. Bitte benutzen Sie diese Skala um anzugeben, wieviel Entscheidungsfreiheit und Einfluss Sie nach Ihrem Empfinden darauf haben, wie Ihr weiteres Leben abläuft? 1: Überhaupt keine Freiheit 2: Völlige Freiheit",
+    text: "Einige Leute meinen, dass sie ihr Leben völlig frei selbst bestimmen. Andere meinen, dass sie nur wenig Einfluss darauf haben, was mit ihnen geschieht. Bitte benutzen Sie diese Skala um anzugeben, wieviel Entscheidungsfreiheit und Einfluss Sie nach Ihrem Empfinden darauf haben, wie Ihr weiteres Leben abläuft? 1: Überhaupt keine Freiheit 10: Völlige Freiheit",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -510,7 +510,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q50",
-    text: "Wie zufrieden sind Sie mit der finanziellen Situation Ihres Haushalts? Bitte benutzen Sie wieder diese Skala,um Ihre Antwort zu geben: 1: Überhaupt nicht zufrieden 10: Völlig zufrieden",
+    text: "Wie zufrieden sind Sie mit der finanziellen Situation Ihres Haushalts? Bitte benutzen Sie wieder diese Skala, um Ihre Antwort zu geben: 1: Überhaupt nicht zufrieden 10: Völlig zufrieden",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -526,7 +526,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q51",
-    text: "Wie oft traf in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie nicht genug zu essen hatten.",
+    text: "Wie oft traf es in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie nicht genug zu essen hatten?",
     answer_options: [
       { code: 1, optionText: "Oft" },
       { code: 2, optionText: "Manchmal" },
@@ -536,7 +536,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q52",
-    text: "Wie oft traf in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie sich in Ihrem Haushalt nicht sicher vor einer Straftat fühlten.",
+    text: "Wie oft traf es in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie sich in Ihrem Haushalt nicht sicher vor einer Straftat fühlten?",
     answer_options: [
       { code: 1, optionText: "Oft" },
       { code: 2, optionText: "Manchmal" },
@@ -546,7 +546,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q53",
-    text: "Wie oft traf in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie nicht die nötigen Medikamente oder ärztliche Behandlung erhielten",
+    text: "Wie oft traf es in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie nicht die nötigen Medikamente oder ärztliche Behandlung erhielten?",
     answer_options: [
       { code: 1, optionText: "Oft" },
       { code: 2, optionText: "Manchmal" },
@@ -556,7 +556,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q54",
-    text: "Wie oft traf in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie Kein Geld verdienten.",
+    text: "Wie oft traf es in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie kein Geld verdienten?",
     answer_options: [
       { code: 1, optionText: "Oft" },
       { code: 2, optionText: "Manchmal" },
@@ -566,7 +566,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q55",
-    text: "Wie oft traf in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie ohne ein sicheres Dach über dem Kopf waren.",
+    text: "Wie oft traf es in den vergangenen 12 Monaten zu, dass Sie oder Ihre Familie ohne ein sicheres Dach über dem Kopf waren?",
     answer_options: [
       { code: 1, optionText: "Oft" },
       { code: 2, optionText: "Manchmal" },
@@ -853,7 +853,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q84",
-    text: "Wie viel Vertrauen haben Sie in internationalen Währungsfonds?",
+    text: "Wie viel Vertrauen haben Sie in internationale Währungsfonds?",
     answer_options: [
       { code: 1, optionText: "Sehr viel Vertrauen" },
       { code: 2, optionText: "Ziemlich viel Vertrauen" },
@@ -913,7 +913,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q90",
-    text: "Heutzutage ist viel von internationalen Organisationen die Rede. Manchmal heißt es, internationale Organisationen sollten vor allem das Leben der Menschen verbessern, selbst wenn das vielleicht bedeutet, dass Entscheidungen nicht demokratisch getroffen werden. Was sollte Ihrer Meinung nach bei internationalen Organisationen wichtiger sein: eine wirksame oder eine demokratische Arbeitsweise? Nennen sie ein Zahl auf einer Skala von 1 bis 10, 1 ist eine wirksame Arbeitsweise und 10 ist eine demokratische Arbeitsweise. ",
+    text: "Heutzutage ist viel von internationalen Organisationen die Rede. Manchmal heißt es, internationale Organisationen sollten vor allem das Leben der Menschen verbessern, selbst wenn das vielleicht bedeutet, dass Entscheidungen nicht demokratisch getroffen werden. Was sollte Ihrer Meinung nach bei internationalen Organisationen wichtiger sein: eine wirksame oder eine demokratische Arbeitsweise? Nennen sie eine Zahl auf einer Skala von 1 bis 10, 1 ist eine wirksame Arbeitsweise und 10 ist eine demokratische Arbeitsweise. ",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -974,7 +974,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q96",
-    text: "Sind sie Mitglied von Organisationen oder Vereinen für Bildung, Kunst,Musik und kulturelle Tätigkeiten?",
+    text: "Sind sie Mitglied von Organisationen oder Vereinen für Bildung, Kunst, Musik und kulturelle Tätigkeiten?",
     answer_options: [
       { code: 1, optionText: "Aktives Mitglied" },
       { code: 2, optionText: "Inaktives Mitglied" },
@@ -1065,7 +1065,7 @@ export const questions: Array<Question> = [
   //Wirtschaftliche Werte
   {
     id: "Q106",
-    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Einkommen auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Einkommen sollten stärker aneinander angeglichen werden'' und 2 ist ,,Es sollte größere Anreize für persönliche Leistung geben''",
+    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Einkommen auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Einkommen sollten stärker aneinander angeglichen werden'' und 10 ist ,,Es sollte größere Anreize für persönliche Leistung geben''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1081,7 +1081,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q107",
-    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Privatisierung auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Mehr staatliche Unternehmen sollten privatisiert werden'' und 2 ist ,,Mehr private Unternehmen sollten verstaatlicht werden''",
+    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Privatisierung auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Mehr staatliche Unternehmen sollten privatisiert werden'' und 10 ist ,,Mehr private Unternehmen sollten verstaatlicht werden''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1097,7 +1097,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q108",
-    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Staatsverantwortung auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Der Staat sollte mehr Verantwortung dafür übernehmen, dass jeder Einzelne abgesichert ist'' und 2 ist ,,Jeder Einzelne sollte mehr Verantwortung für sichselbst übernehmen.''",
+    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Staatsverantwortung auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Der Staat sollte mehr Verantwortung dafür übernehmen, dass jeder Einzelne abgesichert ist'' und 10 ist ,,Jeder Einzelne sollte mehr Verantwortung für sichselbst übernehmen.''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1113,7 +1113,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q109",
-    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Wettbewerb auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Wettbewerb ist gut'' und 2 ist ,,Wettbewerb ist schädlich''",
+    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Wettbewerb auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Wettbewerb ist gut'' und 10 ist ,,Wettbewerb ist schädlich''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1129,7 +1129,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q110",
-    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Arbeitsleistung auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Auf lange Sicht zahlt sich harte Arbeit aus.'' und 2 ist ,,Harte Arbeit zahlt sich nicht immer aus. Erfolg ist mehr eine Frage des Glücks und guter Kontakte''",
+    text: "Wo würden Sie Ihre eigenen Ansichten beim Thema Arbeitsleistung auf einer Skala von 1 bis 10 einordnen. 1 ist dabei, ,,Auf lange Sicht zahlt sich harte Arbeit aus.'' und 10 ist ,,Harte Arbeit zahlt sich nicht immer aus. Erfolg ist mehr eine Frage des Glücks und guter Kontakte''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1163,7 +1163,7 @@ export const questions: Array<Question> = [
   //Korruption
   {
     id: "Q112",
-    text: "Jetzt möchte ich Sie nach Ihrer Meinung zur Korruption fragen – wenn man andere Menschen mit Geldbesticht, sie beschenkt oder ihnen Gefälligkeiten erweist, damit sie tun, was man braucht. Wo würden Sie Deutschland auf einer Skala von 1 bis 10 einordnen? 1 bedeutet ''in Deutschland gibt es keine Korruptio'' und 10 bedeutet ''in Deutschland gibt es außerordentlich viel Korruption''. Wenn Ihre Einschätzungirgendwo dazwischen liegt, wählen Sie die entsprechende Zahl zwischen 1 und 10.",
+    text: "Jetzt möchte ich Sie nach Ihrer Meinung zur Korruption fragen. Wo würden Sie Deutschland auf einer Skala von 1 bis 10 einordnen? 1 bedeutet ''in Deutschland gibt es keine Korruption'' und 10 bedeutet ''in Deutschland gibt es außerordentlich viel Korruption''. Wenn Ihre Einschätzungirgendwo dazwischen liegt, wählen Sie die entsprechende Zahl zwischen 1 und 10.",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1209,7 +1209,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q116",
-    text: "Sagen Sie mir bitte zu jeder der folgenden Gruppen, ob Ihrer Meinung nach keine, nur wenige, die meisten oder alle ihrer Mitglieder korrupt sind. Wie sehr korrupt sind ihrer Meinung nach Öffentliche Dienstleister (Polizei, Gerichte, Beamte,Ärzte, Lehrer) ?",
+    text: "Sagen Sie mir bitte zu jeder der folgenden Gruppen, ob Ihrer Meinung nach keine, nur wenige, die meisten oder alle ihrer Mitglieder korrupt sind. Wie sehr korrupt sind ihrer Meinung nach Öffentliche Dienstleister (Polizei, Gerichte, Beamte,Ärzte, Lehrer)?",
     answer_options: [
       { code: 1, optionText: "Keine" },
       { code: 2, optionText: "Nur wenige" },
@@ -1239,7 +1239,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q119",
-    text: "Inwieweit stimmen Sie folgender Aussage zu oder nicht zu: „Frauen sind allgemein weniger bestechlich alsänner“",
+    text: "Inwieweit stimmen Sie folgender Aussage zu oder nicht zu: „Frauen sind allgemein weniger bestechlich als Männer“",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -1266,7 +1266,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q121",
-    text: "Nun geht es um Ihre Meinung zu Zuwanderern, also Menschen aus anderen Ländern, die nach Deutschland kommen, um hier zu leben. Wie wirkt sich Ihrer Meinung nach die Zuwanderung auf die weitere Entwicklung Deutschlands aus?",
+    text: "Nun geht es um Ihre Meinung zu Zuwanderern. Wie wirkt sich Ihrer Meinung nach die Zuwanderung auf die weitere Entwicklung Deutschlands aus?",
     answer_options: [
       { code: 1, optionText: "Sehr positiv" },
       { code: 2, optionText: "Ziemlich positiv" },
@@ -1440,7 +1440,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q138",
-    text: "Wie oft ist der Auftritt von Sexuelle Belästigung in ihrer Nachbarschaft?",
+    text: "Wie oft ist der Auftritt von Sexueller Belästigung in ihrer Nachbarschaft?",
     answer_options: [
       { code: 1, optionText: "Sehr oft" },
       { code: 2, optionText: "Ziemlich oft" },
@@ -1466,7 +1466,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q141",
-    text: "Bitte sagen Sie mir für jede der folgenden Vorkehrungen, ob sie diese beim Verlassen des Hauses zu Ihrer persönlichen Sicherheit treffen oder nicht treffen. Treffen sie die Vorkehrung und tragen sie zum Schutz ein Messer, eine Pistole oder andere Waffen mit mir?",
+    text: "Bitte sagen Sie mir für jede der folgenden Vorkehrungen, ob sie diese beim Verlassen des Hauses zu Ihrer persönlichen Sicherheit treffen oder nicht treffen. Treffen sie die Vorkehrung und tragen sie zum Schutz ein Messer, eine Pistole oder andere Waffen mit sich?",
     answer_options: [
       { code: 1, optionText: "Ja, treffe die Vorkehrung" },
       { code: 2, optionText: "Nein, treffe die Vorkehrung nicht" },
@@ -1502,7 +1502,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q145",
-    text: "Und wie ist es mit Ihren engen Familienangehörigen – ist jemand aus Ihrer Familie in den letzten 12 Monaten Opfer einer Straftat geworden?",
+    text: "Und wie ist es mit Ihren engen Familienangehörigen. Ist jemand aus Ihrer Familie in den letzten 12 Monaten Opfer einer Straftat geworden?",
     answer_options: [
       { code: 1, optionText: "Ja" },
       { code: 2, optionText: "Nein" },
@@ -1540,7 +1540,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q149",
-    text: "Für die meisten Menschen sind Freiheit und Gleichberechtigung wichtig. Wenn Sie wählen müssten, welchesvon beiden wäre für Sie wichtiger?",
+    text: "Für die meisten Menschen sind Freiheit und Gleichberechtigung wichtig. Wenn Sie wählen müssten, welches von beiden wäre für Sie wichtiger?",
     answer_options: [
       { code: 1, optionText: "Freiheit" },
       { code: 2, optionText: "Gleichberechtigung" },
@@ -1660,7 +1660,7 @@ export const questions: Array<Question> = [
   // Wissenschaft und Technik
   {
     id: "Q158",
-    text: "Wissenschaft und Technik machen unser Leben gesünder, leichter und angenehmer. Von einer Skala von 1-10, wie sehr stimmen sie dieser Aussage zu. 1 ist dabei überhaupt keine Zustimmung und 10 völlige Zustimmung",
+    text: ",,Wissenschaft und Technik machen unser Leben gesünder, leichter und angenehmer``. Von einer Skala von 1-10, wie sehr stimmen sie dieser Aussage zu. 1 ist dabei überhaupt keine Zustimmung und 10 völlige Zustimmung",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1676,7 +1676,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q159",
-    text: "Wissenschaft und Technik eröffnen der nächsten Generation mehr Möglichkeiten. Von einer Skala von 1-10, wie sehr stimmen sie dieser Aussage zu. 1 ist dabei überhaupt keine Zustimmung und 10 völlige Zustimmung",
+    text: ",,Wissenschaft und Technik eröffnen der nächsten Generation mehr Möglichkeiten``. Von einer Skala von 1-10, wie sehr stimmen sie dieser Aussage zu. 1 ist dabei überhaupt keine Zustimmung und 10 völlige Zustimmung",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1740,7 +1740,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q163",
-    text: "Alles in allem würden Sie sagen, dass die Welt aufgrund von Wissenschaft und Technik besser dran ist oderdass sie schlechter dran ist als sie es ohne Wissenschaft und Technik wäre? Bitte zeigen Sie Ihre Meinung auf dieser Skala an, auf der 1 für “weit schlechter dran” und 10 “für weit besser dran” steht. ",
+    text: "Alles in allem würden Sie sagen, dass die Welt aufgrund von Wissenschaft und Technik besser dran ist oder dass sie schlechter dran ist als sie es ohne Wissenschaft und Technik wäre? Bitte zeigen Sie Ihre Meinung auf dieser Skala an, wenn auf der 1 für “weit schlechter dran” und 10 “für weit besser dran” steht.",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1804,7 +1804,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q169",
-    text: "Bitte sagen Sie uns, ob Sie den folgenden Aussagen voll und ganz zustimmen, nicht zustimmen oder überhaupt nicht zustimmen: Wenn sich Wissenschaft und Religion widersprechen, ist die Religion im Recht.",
+    text: "Bitte sagen Sie uns, ob Sie den folgenden Aussagen voll und ganz zustimmen, nicht zustimmen oder überhaupt nicht zustimmen: ,,Wenn sich Wissenschaft und Religion widersprechen, ist die Religion im Recht.``",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -1814,7 +1814,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q170",
-    text: "Bitte sagen Sie uns, ob Sie den folgenden Aussagen voll und ganz zustimmen, nicht zustimmen oder überhaupt nicht zustimmen: Die einzige akzeptable Religion ist meine Religion.",
+    text: "Bitte sagen Sie uns, ob Sie den folgenden Aussagen voll und ganz zustimmen, nicht zustimmen oder überhaupt nicht zustimmen: ,,Die einzige akzeptable Religion ist meine Religion.``",
     answer_options: [
       { code: 1, optionText: "Stimme voll und ganz zu" },
       { code: 2, optionText: "Stimme zu" },
@@ -1876,7 +1876,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q176",
-    text: "Auf einer Skala von 1-10, inwieweit stimmen Sie der Aussage zu: Es ist heutzutage schwer, sich für die richtigen moralischen Regeln zu entscheiden? 1 bedeutet volle Zustimmung und 10 überhaupt keine Zustimmung",
+    text: "Auf einer Skala von 1-10, inwieweit stimmen Sie der Aussage zu: ,,Es ist heutzutage schwer, sich für die richtigen moralischen Regeln zu entscheiden``. 1 bedeutet volle Zustimmung und 10 überhaupt keine Zustimmung",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1892,7 +1892,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q177",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Staatliche Leistungen in Anspruch nehmen, auf die man keinen Anspruch hat''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Staatliche Leistungen in Anspruch nehmen, auf die man keinen Anspruch hat''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1940,7 +1940,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q180",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Steuern hinterziehen, wenn man die Möglichkeit hat''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Steuern hinterziehen, wenn man die Möglichkeit hat''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1956,7 +1956,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q181",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Jemand nimmt Schmiergeld für seine Tätigkeiten an''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Jemand nimmt Schmiergeld für seine Tätigkeiten an''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1972,7 +1972,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q182",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Homosexualität''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Homosexualität''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -1988,7 +1988,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q183",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Prostitution''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Prostitution''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2004,7 +2004,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q184",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Abtreibung''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Abtreibung''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2020,7 +2020,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q185",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Scheidung''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Scheidung''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2036,7 +2036,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q186",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Sex vor der Ehe''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Sex vor der Ehe''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2052,7 +2052,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q187",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Selbstmord''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Selbstmord''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2068,7 +2068,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q188",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Sterbehilfe (das Leben unheilbar Kranker beenden)''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Sterbehilfe''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2084,7 +2084,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q189",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Wenn ein Mann seine Frau schlägt''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Wenn ein Mann seine Frau schlägt''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2100,7 +2100,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q190",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Wenn Eltern ihre Kinder schlagen''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Wenn Eltern ihre Kinder schlagen''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2116,7 +2116,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q191",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Gewalt gegen andere Menschen''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Gewalt gegen andere Menschen''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2132,7 +2132,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q192",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Terrorismus aus politischen, ideologischen oder religiösen Gründen''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Terrorismus aus politischen, ideologischen oder religiösen Gründen''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2148,7 +2148,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q193",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Geschlechtsverkehr mit häufig wechselnden Partnern in flüchtigen Beziehungen''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Geschlechtsverkehr mit häufig wechselnden Partnern in flüchtigen Beziehungen''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2164,7 +2164,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q194",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Politisch motivierte Gewalt''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Politisch motivierte Gewalt''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2180,7 +2180,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q195",
-    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung ,in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Todesstrafe''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
+    text: "Auf einer Skala von 1-10, inwieweit finden sie folgende Aussage unter keinen Umständen in Ordnung, in jedem Fall in Ordnung oder irgendetwas dazwischen: ,,Todesstrafe''? 1 bedeutet ,,Unter keinen Umständen in Ordnung'' und 10 ,,in jedem Fall in Ordnung''",
     answer_options: [
       { code: 1, optionText: "1" },
       { code: 2, optionText: "2" },
@@ -2910,7 +2910,7 @@ export const questions: Array<Question> = [
   },
   {
     id: "Q256",
-    text: "Menschen haben verschiedene Ansichten über sich selbst und wie stark Sie sich mit ihrem Umfeld und dem Rest der Welt verbunden fühlen. Wenn Sie sich einmal diese Liste ansehen, wie stark fühlen Sie sich verbunden mit Der Region, in der Sie leben",
+    text: "Menschen haben verschiedene Ansichten über sich selbst und wie stark Sie sich mit ihrem Umfeld und dem Rest der Welt verbunden fühlen. Wenn Sie sich einmal diese Liste ansehen, wie stark fühlen Sie sich verbunden mit der Region, in der Sie leben",
     answer_options: [
       { code: 1, optionText: "Sehr verbunden" },
       { code: 2, optionText: "Ziemlich verbunden" },
@@ -2951,7 +2951,7 @@ export const questions: Array<Question> = [
   // Demographie
   {
     id: "Q260",
-    text: "Geschlecht der Zielperson",
+    text: "Welches Geschlecht sind sie?",
     answer_options: [
       { code: 1, optionText: "Männlich" },
       { code: 2, optionText: "Weiblich" },
@@ -3281,14 +3281,6 @@ export const questions: Array<Question> = [
       },
     ],
   },
-  // {
-  //   id: "Q273a_de",
-  //   text: "Leben Sie mit einem Partner / einer Partnerin zusammen?",
-  //   answer_options: [
-  //     { code: 1, optionText: "Ja" },
-  //     { code: 2, optionText: "Nein" },
-  //   ],
-  // },
   {
     id: "Q274",
     text: "Haben Sie Kinder, wie viel?",
@@ -3570,7 +3562,7 @@ export const questions: Array<Question> = [
       {
         code: 9,
         optionText:
-          "eschäftigte/r in der Landwirtschaft wie: Landarbeiter/in, Traktorfahrer/in",
+          "Beschäftigte/r in der Landwirtschaft wie: Landarbeiter/in, Traktorfahrer/in",
       },
       {
         code: 10,
@@ -3627,7 +3619,7 @@ export const questions: Array<Question> = [
       {
         code: 9,
         optionText:
-          "eschäftigte/r in der Landwirtschaft wie: Landarbeiter/in, Traktorfahrer/in",
+          "Beschäftigte/r in der Landwirtschaft wie: Landarbeiter/in, Traktorfahrer/in",
       },
       {
         code: 10,
@@ -3684,7 +3676,7 @@ export const questions: Array<Question> = [
       {
         code: 9,
         optionText:
-          "eschäftigte/r in der Landwirtschaft wie: Landarbeiter/in, Traktorfahrer/in",
+          "Beschäftigte/r in der Landwirtschaft wie: Landarbeiter/in, Traktorfahrer/in",
       },
       {
         code: 10,

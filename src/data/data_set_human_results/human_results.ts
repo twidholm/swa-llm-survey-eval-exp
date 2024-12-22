@@ -3002,14 +3002,6 @@ export const human_results: Array<HumanResult> = [
       },
     ],
   },
-  // {
-  //   questionId: "Q273a_de",
-  //   text: "Leben Sie mit einem Partner / einer Partnerin zusammen?",
-  //   answerdistribution: [
-  //     { code: 1, percentage: "Ja" },
-  //     { code: 2, percentage: "Nein" },
-  //   ],
-  // },
   {
     questionId: "Q274",
     answerdistribution: [
@@ -3417,8 +3409,8 @@ export const human_results: Array<HumanResult> = [
       { code: 1, percentage: 29.6 },
       { code: 2, percentage: 26.5 },
       { code: 3, percentage: 1.8 },
-      { code: 4, percentage: "Der griechisch-orthodoxen Kirche" },
-      { code: 5, percentage: "Der russisch-orthodoxen Kirche" },
+      { code: 4, percentage: 0.5 },
+      { code: 5, percentage: 0.8 },
       { code: 6, percentage: 3.8 },
       { code: 7, percentage: 1.6 },
     ],

@@ -1,157 +1,288 @@
 import fs from "fs"
 import { sum, transpose } from "mathjs" // Optional: Für Matrixoperationen
+import { PersonaModelResult } from "../types/Result.js"
+import { ModelType } from "../types/ModelType.js"
+import { human_results } from "../data/data_set_human_results/human_results.js"
 
 // Typdefinitionen
 interface SurveyResult {
   results: { role: string; content: string }[]
+  modeltype: number
 }
 
-// Hilfsfunktion zur Berechnung von Proportion Agreement
-function calculateProportionAgreement(responses: number[]): number {
-  let totalPairs = 0
-  let agreements = 0
-
-  for (let i = 0; i < responses.length; i++) {
-    for (let j = i + 1; j < responses.length; j++) {
-      totalPairs++
-      if (responses[i] === responses[j]) agreements++
-    }
-  }
-  return totalPairs === 0 ? 0 : agreements / totalPairs
+interface QuestionAverage {
+  questionId: string
+  averageDistribution: { [key: string]: number }
 }
 
-// Hilfsfunktion zur Berechnung von Cohen's Kappa
-function calculateCohensKappa(
-  responses1: number[],
-  responses2: number[]
+interface ModelAverages {
+  [modeltype: number]: QuestionAverage[]
+}
+type HumanResult = {
+  questionId: string
+  answerdistribution: Array<{ code: string; percentage: number }>
+}
+function formatHumanResults(humans: HumanResult[]): {
+  [key: string]: number[]
+} {
+  const formatted: { [key: string]: number[] } = {}
+  humans.forEach((human) => {
+    const maxCode = Math.max(
+      ...human.answerdistribution.map((a) => Number(a.code))
+    )
+    const percentages: number[] = Array(maxCode).fill(0)
+
+    human.answerdistribution.forEach((a) => {
+      percentages[Number(a.code) - 1] = a.percentage
+    })
+
+    formatted[human.questionId] = percentages
+  })
+  return formatted
+}
+
+// Proportion Agreement
+function calculateProportionAgreement(
+  model: number[],
+  human: number[]
 ): number {
-  console.log("Antwort 1: ", responses1)
-  console.log("Antwort 2: ", responses2)
-  if (responses1.length !== responses2.length) {
-    throw new Error("Antwortsätze haben unterschiedliche Längen")
+  let agreements = 0
+  for (let i = 0; i < model.length; i++) {
+    if (Math.round(model[i]) === Math.round(human[i])) agreements++
   }
-
-  const n = responses1.length
-  let observedAgreement = 0
-  const labelCounts: Record<number, number> = {}
-
-  for (let i = 0; i < n; i++) {
-    if (responses1[i] === responses2[i]) observedAgreement++
-    labelCounts[responses1[i]] = (labelCounts[responses1[i]] || 0) + 1
-    labelCounts[responses2[i]] = (labelCounts[responses2[i]] || 0) + 1
-  }
-
-  const totalPairs = n
-  observedAgreement /= totalPairs
-
-  let expectedAgreement = 0
-  const totalLabels = Object.values(labelCounts).reduce((a, b) => a + b, 0)
-  for (const label in labelCounts) {
-    const proportion = labelCounts[parseInt(label)] / totalLabels
-    expectedAgreement += proportion * proportion
-  }
-
-  return (observedAgreement - expectedAgreement) / (1 - expectedAgreement)
+  return agreements / model.length
 }
 
-// Hilfsfunktion zur Berechnung von Cramérs V
-function calculateCramersV(matrix: number[][]): number {
-  console.log("Matrix: ", matrix)
+// Cohen's Kappa
+function calculateCohensKappa(model: number[], human: number[]): number {
+  const total = model.reduce((a, b) => a + b, 0)
+  const observed =
+    model.reduce((sum, val, i) => sum + Math.min(val, human[i]), 0) / total
 
-  const total = sum(matrix.flat())
+  const modelProp = model.map((v) => v / total)
+  const humanProp = human.map((v) => v / total)
+  const expected = modelProp.reduce((sum, p, i) => sum + p * humanProp[i], 0)
+
+  return (observed - expected) / (1 - expected)
+}
+
+// Cramér's V
+function calculateCramersV(model: number[], human: number[]): number {
+  const total = sum(model) + sum(human)
+  const matrix = [model, human]
+
   const rowSums = matrix.map((row) => sum(row))
-  const colSums = transpose(matrix).map((row) => sum(row) as number)
-
-  console.log("total: ", total)
-  console.log("rowSums: ", rowSums)
-  console.log("colSums: ", colSums)
+  const colSums = transpose(matrix).map((col) => sum(col as number[]))
 
   let chiSquare = 0
-
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
       const expected = (rowSums[i] * colSums[j]) / total
-      if (expected === 0) continue // Vermeidet Division durch 0
-      chiSquare += Math.pow(matrix[i][j] - expected, 2) / expected
+      chiSquare += expected
+        ? Math.pow(matrix[i][j] - expected, 2) / expected
+        : 0
     }
   }
 
-  console.log("chiSquare: ", chiSquare)
-
-  const minDimension = Math.min(matrix.length - 1, matrix[0].length - 1)
-  if (minDimension <= 0) {
-    console.error("Matrix ist zu klein für die Berechnung von Cramér's V.")
-    return NaN
-  }
-
-  console.log("minDimension: ", minDimension)
-
-  return Math.sqrt(chiSquare / (total * minDimension))
+  const minDim = Math.min(matrix.length - 1, matrix[0].length - 1)
+  return Math.sqrt(chiSquare / (total * minDim))
 }
-function createContingencyMatrixForHumanAndModel(
-  humanResponses: { [key: string]: number },
-  modelResponses: { [key: string]: number },
-  answerOptions: number[]
-): number[][] {
-  const matrix: number[][] = Array(answerOptions.length)
-    .fill(0)
-    .map(() => Array(answerOptions.length).fill(0))
 
-  for (const question in humanResponses) {
-    const humanAnswer = humanResponses[question]
-    const modelAnswer = modelResponses[question]
+// Umformatierung der Modellresultate
+function formatModelResults(
+  models: {
+    questionId: string
+    averageDistribution: { [key: string]: number }
+  }[],
+  humanResults: Array<HumanResult>
+): { [key: string]: number[] } {
+  const formatted: { [key: string]: number[] } = {}
 
-    const row = answerOptions.indexOf(humanAnswer)
-    const col = answerOptions.indexOf(modelAnswer)
+  models.forEach((model) => {
+    const { questionId, averageDistribution } = model
 
-    if (row >= 0 && col >= 0) {
-      matrix[row][col]++
+    const humanResult = humanResults.find((hr) => hr.questionId === questionId)
+    const numOptions = humanResult?.answerdistribution.length
+
+    const percentages: number[] = new Array(numOptions).fill(0)
+    if (numOptions) {
+      // Fülle die vorhandenen Antwortverteilungen ein
+      Object.entries(averageDistribution).forEach(([code, percentage]) => {
+        const index = Number(code) - 1 // 0-basierter Index
+        if (index < numOptions) {
+          percentages[index] = percentage
+        }
+      })
+
+      // Speichere die umgewandelte Verteilung für die Frage
+      formatted[questionId] = percentages
     }
-  }
+  })
 
-  return matrix
+  return formatted
 }
 
+function calculateModelAverages(data: SurveyResult[]): ModelAverages {
+  const modelAggregates: {
+    [modeltype: number]: { [questionId: string]: { [answer: string]: number } }
+  } = {}
+  const modelCounts: { [modeltype: number]: { [questionId: string]: number } } =
+    {}
+
+  // 1. Antworten aggregieren
+  data.forEach((entry) => {
+    const modeltype = entry.modeltype
+
+    if (!modelAggregates[modeltype]) {
+      modelAggregates[modeltype] = {}
+      modelCounts[modeltype] = {}
+    }
+
+    entry.results.forEach((result, index) => {
+      if (result.role === "user") {
+        const questionId = `Q${Math.floor(index / 2) + 1}`
+        const answer = entry.results[index + 1]?.content?.trim()
+
+        if (!modelAggregates[modeltype][questionId]) {
+          modelAggregates[modeltype][questionId] = {}
+          modelCounts[modeltype][questionId] = 0
+        }
+
+        modelAggregates[modeltype][questionId][answer] =
+          (modelAggregates[modeltype][questionId][answer] || 0) + 1
+
+        modelCounts[modeltype][questionId] += 1
+      }
+    })
+  })
+
+  // 2. Prozentwerte berechnen
+  const averages: ModelAverages = {}
+
+  Object.entries(modelAggregates).forEach(([modeltype, questions]) => {
+    averages[parseInt(modeltype)] = Object.entries(questions).map(
+      ([questionId, answers]) => {
+        const totalAnswers = modelCounts[parseInt(modeltype)][questionId]
+        const averageDistribution: { [key: string]: number } = {}
+        Object.entries(answers).forEach(([answer, count]) => {
+          averageDistribution[answer] = parseFloat(
+            ((count / totalAnswers) * 100).toFixed(2)
+          )
+        })
+
+        return { questionId, averageDistribution }
+      }
+    )
+  })
+
+  return averages
+}
+function calculateModelAverages2(data: SurveyResult[]): ModelAverages {
+  const modelAggregates: {
+    [modeltype: number]: { [questionId: string]: { [answer: string]: number } }
+  } = {}
+  const modelCounts: { [modeltype: number]: { [questionId: string]: number } } =
+    {}
+
+  // 1. Antworten aggregieren über alle Personas eines Modeltypes
+  data.forEach((entry) => {
+    const modeltype = entry.modeltype
+
+    if (!modelAggregates[modeltype]) {
+      modelAggregates[modeltype] = {}
+      modelCounts[modeltype] = {}
+    }
+
+    entry.results.forEach((result, index) => {
+      // Nur Antworten von der Rolle "assistant" zählen
+      if (result.role === "assistant") {
+        const questionId = `Q${Math.floor(index / 2) + 1}`
+        const answer = result.content.trim()
+
+        // Initialisiere die Strukturen für die Frage
+        if (!modelAggregates[modeltype][questionId]) {
+          modelAggregates[modeltype][questionId] = {}
+          modelCounts[modeltype][questionId] = 0
+        }
+
+        // Antwort aggregieren
+        modelAggregates[modeltype][questionId][answer] =
+          (modelAggregates[modeltype][questionId][answer] || 0) + 1
+
+        // Zähle die Gesamtzahl der Antworten für diese Frage
+        modelCounts[modeltype][questionId] += 1
+      }
+    })
+  })
+
+  // 2. Prozentwerte berechnen
+  const averages: ModelAverages = {}
+
+  Object.entries(modelAggregates).forEach(([modeltype, questions]) => {
+    averages[parseInt(modeltype)] = Object.entries(questions).map(
+      ([questionId, answers]) => {
+        const totalAnswers = modelCounts[parseInt(modeltype)][questionId]
+        const averageDistribution: { [key: string]: number } = {}
+
+        // Berechne den Prozentwert pro Antwort
+        Object.entries(answers).forEach(([answer, count]) => {
+          averageDistribution[answer] = parseFloat(
+            ((count / totalAnswers) * 100).toFixed(2)
+          )
+        })
+
+        return { questionId, averageDistribution }
+      }
+    )
+  })
+
+  return averages
+}
+
+function compareModelsWithHumans(
+  modelResults: ModelAverages,
+  humanResults: HumanResult[]
+) {
+  const formattedModels = formatModelResults(modelResults, humanResults)
+  const formattedHumans = formatHumanResults(humanResults)
+  const comparisonResults: any = {}
+
+  Object.keys(formattedModels).forEach((questionId) => {
+    if (formattedHumans[questionId]) {
+      // console.log("Question Id", questionId)
+      const model = formattedModels[questionId]
+      const human = formattedHumans[questionId]
+      // console.log("Model", model)
+      // console.log("Human", human)
+      comparisonResults[questionId] = {
+        proportionAgreement: calculateProportionAgreement(model, human),
+        cohensKappa: calculateCohensKappa(model, human),
+        cramersV: calculateCramersV(model, human),
+      }
+    }
+  })
+
+  return comparisonResults
+}
 // Hauptlogik
 export async function evaluate() {
   const rawData = fs.readFileSync("results.json", "utf8")
   const data: SurveyResult[] = JSON.parse(rawData)
-  console.log(data)
-  // Extrahiere Antworten der Modelle
-  const allResponses: number[][] = data.map((entry) =>
-    entry.results
-      .filter((result) => result.role === "assistant")
-      .map((result) => parseInt(result.content.trim()))
-  )
-  console.log(allResponses)
-  if (allResponses.length < 2) {
-    throw new Error("Nicht genügend Modelle für die Berechnung.")
+  // console.log(data)
+  data.forEach((entry) => {
+    const modeltype = entry.modeltype
+    console.log(modeltype)
+  })
+  const distributions = calculateModelAverages2(data)
+  // console.log(distributions)
+  for (let i = 0; i <= 3; i++) {
+    const modeldist = distributions[i]
+    // console.log(modeldist)
+    const newModeldist = modeldist.slice(0, 5)
+    const humanResults = human_results.slice(0, 5)
+    const results = compareModelsWithHumans(newModeldist, humanResults)
+    console.log(JSON.stringify(results, null, 2))
   }
-
-  // Berechnung von Proportion Agreement
-  const proportionAgreement = calculateProportionAgreement(allResponses.flat())
-
-  // Beispielhafte Berechnung von Cohen's Kappa zwischen zwei Modellen
-  const cohensKappa = calculateCohensKappa(allResponses[0], allResponses[1])
-
-  // Beispielhafte 2x2-Matrix für Cramérs V (erforderlich: Matrix aus Kontingenztabellen)
-  const exampleMatrix: number[][] = [
-    [10, 5], // Antworten Ja
-    [3, 12], // Antworten Nein
-  ]
-  const humanResponses = { q1: 1, q2: 3, q3: 2, q4: 4, q5: 2 }
-  const modelResponses = { q1: 2, q2: 3, q3: 2, q4: 4, q5: 1 }
-  const answerOptions = [1, 2, 3, 4, 5] // Alle möglichen Antwortmöglichkeiten
-  const matrix = createContingencyMatrixForHumanAndModel(
-    humanResponses,
-    modelResponses,
-    answerOptions
-  )
-  const cramersV = calculateCramersV(matrix)
-
-  console.log("Proportion Agrrement: ", proportionAgreement)
-  console.log("Cohens Kappa: ", cohensKappa)
-  console.log("Cramers V: ", cramersV)
 }
 
 // Ausführung

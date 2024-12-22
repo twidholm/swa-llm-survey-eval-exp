@@ -1,7 +1,12 @@
 import {
   AgeGroup,
+  EcoOrgSupport,
   Education,
   Employment,
+  EnvConsciousness,
+  EnvDemoPart,
+  EnvOrgConfidence,
+  EnvOrgMembership,
   Ethnicity,
   Persona,
   PoliticalMembership,
@@ -11,6 +16,7 @@ import {
   Sex,
   SocialClass,
 } from "../../types/Persona.js"
+
 export const personas_poll_dist_large: Array<Persona> = [
   {
     id: 1,
@@ -25,6 +31,11 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -42,6 +53,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -59,6 +76,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -76,6 +99,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -93,6 +122,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -110,6 +145,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -127,6 +168,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.VeryConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -144,6 +191,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -161,6 +214,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.VeryConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -178,6 +237,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -195,6 +260,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -212,6 +283,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -229,6 +306,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -246,6 +329,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.AfD,
     },
@@ -263,6 +352,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -280,6 +375,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -297,6 +398,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -314,6 +421,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -331,6 +444,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -348,6 +467,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -365,6 +490,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -382,6 +513,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -399,6 +536,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -416,6 +559,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -433,6 +582,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -450,6 +605,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -467,6 +628,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -484,6 +651,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.VeryConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -501,6 +674,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -518,6 +697,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -535,6 +720,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.VeryConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -552,6 +743,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -569,6 +766,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -586,6 +789,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -603,6 +812,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -620,6 +835,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -637,6 +858,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.VeryConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -654,6 +881,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -671,6 +904,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -688,6 +927,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -705,6 +950,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -722,6 +973,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -739,6 +996,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -756,6 +1019,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -773,6 +1042,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -790,6 +1065,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -807,6 +1088,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -824,6 +1111,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -841,6 +1134,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -858,6 +1157,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -875,6 +1180,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.DieLinke,
     },
@@ -892,6 +1203,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -909,6 +1226,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -926,6 +1249,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -943,6 +1272,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.VeryConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -960,6 +1295,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -977,6 +1318,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -994,6 +1341,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.VeryConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1011,6 +1364,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -1028,6 +1387,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1045,6 +1410,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1062,6 +1433,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.VeryConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1079,6 +1456,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -1096,6 +1479,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.DieLinke,
     },
@@ -1113,6 +1502,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -1130,6 +1525,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -1147,6 +1548,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1164,6 +1571,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -1181,6 +1594,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.VeryConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1198,6 +1617,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1215,6 +1640,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -1232,6 +1663,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.DieLinke,
     },
@@ -1249,6 +1686,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -1266,6 +1709,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -1283,6 +1732,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -1300,6 +1755,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.VeryConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.AfD,
     },
@@ -1317,6 +1778,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1334,6 +1801,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.VeryConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -1351,6 +1824,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.AfD,
     },
@@ -1368,6 +1847,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -1385,6 +1870,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -1402,6 +1893,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.VeryConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1419,6 +1916,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.BSW,
     },
@@ -1436,6 +1939,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -1453,6 +1962,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1470,6 +1985,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -1487,6 +2008,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1504,6 +2031,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Suburban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1521,6 +2054,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1538,6 +2077,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.FDP,
     },
@@ -1555,6 +2100,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Liberal,
       politicalMembership: PoliticalMembership.AfD,
     },
@@ -1572,6 +2123,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.VeryConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -1589,6 +2146,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1606,6 +2169,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.VeryConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.BSW,
     },
@@ -1623,6 +2192,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -1640,6 +2215,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Rural,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.NoSupport,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.TheGreens,
     },
@@ -1657,6 +2238,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Inactive,
+      environmentalConsciousness: EnvConsciousness.VeryConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.Part,
+      environmentalOrgConfidence: EnvOrgConfidence.SomewhatConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1674,6 +2261,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.Active,
+      environmentalConsciousness: EnvConsciousness.NotConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.CDU,
     },
@@ -1691,6 +2284,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.ALittleConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.ALittleConfident,
+
       politicalOrientation: PoliticalOrientation.Progressive,
       politicalMembership: PoliticalMembership.SPD,
     },
@@ -1708,6 +2307,12 @@ export const personas_poll_dist_large: Array<Persona> = [
       residence: Residence.Urban,
     },
     covariates: {
+      environmentalOrganisationMembership: EnvOrgMembership.NoMember,
+      environmentalConsciousness: EnvConsciousness.SomewhatConscious,
+      ecologicalOrganisationSupport: EcoOrgSupport.Support,
+      environmentalDemoParticipant: EnvDemoPart.NoPart,
+      environmentalOrgConfidence: EnvOrgConfidence.NotConfident,
+
       politicalOrientation: PoliticalOrientation.Conservative,
       politicalMembership: PoliticalMembership.SPD,
     },

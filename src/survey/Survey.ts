@@ -5,7 +5,7 @@ import { ModelType } from "../types/ModelType.js"
 import { createModel } from "../functions/createModel.js"
 import { Persona } from "../types/Persona.js"
 import { Question } from "../types/Question.js"
-import { client } from "../db/MongoDBClient.js"
+
 import { Db, MongoClient } from "mongodb"
 import * as fs from "fs"
 dotenv.config()
@@ -35,10 +35,10 @@ class Survey {
   public getSurveyResults() {
     return this.surveyResults
   }
-  public async saveResults() {
+  public async saveResults(modelNumber: string) {
     const jsonString = JSON.stringify(this.surveyResults, null, 2)
     try {
-      fs.writeFile("results.json", jsonString, (err) => {
+      fs.writeFile(`results_${modelNumber}_model.json`, jsonString, (err) => {
         if (err) {
           console.error("Fehler beim Speichern der Datei:", err)
         } else {
@@ -51,12 +51,26 @@ class Survey {
       console.log(error)
     }
   }
-  // erste zwei Resultate weglassen, da keine Frage des Fragebogens
-  // \n entfernen
-  async run() {
-    for (const persona of this.personas) {
-      for (let i = 0; i <= 3; i++) {
-        const modelType = i as ModelType
+  async run(modelNumber: string) {
+    if (modelNumber.includes("all")) {
+      for (const persona of this.personas) {
+        for (let i = 0; i <= 3; i++) {
+          const modelType = i as ModelType
+          const model = createModel(modelType)
+          model.setPersona(persona)
+          await model.initPersona(this.questions.length)
+          for (const question of this.questions) {
+            await model.generateResponse(question)
+          }
+          const modelResults = model.getResults() as Array<Result>
+
+          console.log("Results", modelResults)
+          this.addResult(modelResults, modelType, persona)
+        }
+      }
+    } else {
+      for (const persona of this.personas) {
+        const modelType = Number(modelNumber) as ModelType
         const model = createModel(modelType)
         model.setPersona(persona)
         await model.initPersona(this.questions.length)
@@ -69,7 +83,7 @@ class Survey {
         this.addResult(modelResults, modelType, persona)
       }
     }
-    this.saveResults()
+    this.saveResults(modelNumber)
   }
 }
 

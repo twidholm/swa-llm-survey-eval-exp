@@ -14,7 +14,7 @@ export enum Education_2 {
   Graduate = "Graduate",
 }
 export enum Ethnicity {
-  German = "Deutscher Hintergrund",
+  German = "Deutschen Hintergrund",
   Immigrant = "Migrationshintergrund",
 }
 
@@ -95,7 +95,35 @@ export enum PoliticalOrientation {
   Conservative = "Konservativ",
   Progressive = "Progressiv",
 }
+export enum EnvOrgMembership {
+  Active = "Aktives Mitglied",
+  Inactive = "Inaktives Mitglied",
+  NoMember = "kein Mitglied",
+}
 
+export enum EnvConsciousness {
+  VeryConscious = "sehr umweltbewusst",
+  SomewhatConscious = "etwas umweltbewusst",
+  ALittleConscious = "wenig oder kaum umweltbewusst",
+  NotConscious = "überhaupt nicht umweltbewusst",
+}
+
+export enum EcoOrgSupport {
+  Support = "mindestens eine",
+  NoSupport = "keine",
+}
+
+export enum EnvDemoPart {
+  NoPart = "Demonstrationen",
+  Part = "keine Demonstrationen",
+}
+
+export enum EnvOrgConfidence {
+  VeryConfident = "sehr hohes Vertrauen",
+  SomewhatConfident = "hohes Vertrauen",
+  ALittleConfident = "wenig Vertrauen",
+  NotConfident = "überhaupt kein Vertrauen",
+}
 //Persona Types
 export type Persona = {
   id: number
@@ -112,5 +140,10 @@ export type Persona = {
   covariates: {
     politicalOrientation: PoliticalOrientation
     politicalMembership: PoliticalMembership
+    environmentalOrganisationMembership: EnvOrgMembership
+    environmentalConsciousness: EnvConsciousness
+    ecologicalOrganisationSupport: EcoOrgSupport
+    environmentalDemoParticipant: EnvDemoPart
+    environmentalOrgConfidence: EnvOrgConfidence
   }
 }

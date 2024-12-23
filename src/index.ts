@@ -73,9 +73,8 @@ async function main() {
       const survey = new Survey(personaDataset, questionDataset)
       if (modelNumber.includes("none") === false) {
         await survey.run(modelNumber)
-        const surveyResults = survey.getSurveyResults()
+
         console.log("Survey done...")
-        console.log("Here are the results: ", surveyResults)
       }
     } else if (questionProcessResponse.includes("evaluate")) {
       console.log("Starting Evaluation...")

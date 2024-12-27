@@ -29,7 +29,7 @@ class Claude_Ai extends Model {
       const params: Anthropic.MessageCreateParams = {
         max_tokens: 1024,
         messages: this.messages,
-        model: "claude-3-opus-20240229",
+        model: "claude-3-5-haiku-latest",
         temperature: 0.2,
       }
       const response = await this.instance.messages.create(params)
@@ -82,6 +82,7 @@ class Claude_Ai extends Model {
   public getPersona(): any {
     return this.persona
   }
+
   public getResults() {
     return this.messages
   }

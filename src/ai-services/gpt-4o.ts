@@ -28,7 +28,7 @@ class Gpt_Ai extends Model {
     this.addMessage("user", content)
     try {
       const response = (await this.instance.chat.completions.create({
-        model: "gpt-4o",
+        model: "gpt-4o-mini",
         messages: [...this.messages],
         temperature: 0.2,
       })) as OpenAI.Chat.ChatCompletion
@@ -49,7 +49,7 @@ class Gpt_Ai extends Model {
       this.addMessage("user", personaText)
       try {
         const response = (await this.instance.chat.completions.create({
-          model: "gpt-4o",
+          model: "gpt-4o-mini",
           messages: [...this.messages],
           temperature: 0.2,
         })) as OpenAI.Chat.ChatCompletion

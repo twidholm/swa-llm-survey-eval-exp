@@ -7,6 +7,7 @@ export function createQuestionPrompt(question: Question) {
     .join(" | ") // Trennt die Optionen mit " | "
 
   const prompt = `
+      ${question.id},
       ${question.text}:
       ${optionsText}
     `

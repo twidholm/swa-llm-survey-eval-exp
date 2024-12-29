@@ -28,7 +28,7 @@ class Grok_Ai extends Model {
     this.addMessage("user", content)
     try {
       const response = (await this.instance.chat.completions.create({
-        model: "grok-beta",
+        model: "grok-2",
         messages: [...this.messages],
         temperature: 0.2,
       })) as OpenAI.Chat.ChatCompletion
@@ -49,7 +49,7 @@ class Grok_Ai extends Model {
       this.addMessage("user", personaText)
       try {
         const response = (await this.instance.chat.completions.create({
-          model: "grok-beta",
+          model: "grok-2",
           messages: [...this.messages],
           temperature: 0.2,
         })) as OpenAI.Chat.ChatCompletion

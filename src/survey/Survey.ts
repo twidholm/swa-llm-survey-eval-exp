@@ -62,11 +62,29 @@ class Survey {
 
   public async saveResults(modelNumber: string) {
     const jsonString = JSON.stringify(this.surveyResults, null, 2)
+
+    // Heutiges Datum und Uhrzeit in einem Dateinamen-freundlichen Format
+    const today = new Date()
+    const formattedDate = `${today.getFullYear()}-${String(
+      today.getMonth() + 1
+    ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`
+    const formattedTime = `${String(today.getHours()).padStart(
+      2,
+      "0"
+    )}-${String(today.getMinutes()).padStart(2, "0")}-${String(
+      today.getSeconds()
+    ).padStart(2, "0")}`
+    const timestamp = `${formattedDate}_${formattedTime}`
+
     try {
-      await fs.writeFile(`results_${modelNumber}_model.json`, jsonString)
+      // Erstelle den Dateinamen mit sicherem Zeitstempel
+      const fileName = `results_${modelNumber}_${timestamp}_model.json`
+
+      // Schreibe die Datei
+      await fs.writeFile(fileName, jsonString)
       console.log(
         chalk.green(
-          `Die Ergebnisse wurden erfolgreich in "results_${modelNumber}_model.json" gespeichert.`
+          `Die Ergebnisse wurden erfolgreich in "${fileName}" gespeichert.`
         )
       )
     } catch (err) {
@@ -93,19 +111,30 @@ class Survey {
     this.addResult(modelResults, modelType, persona)
   }
 
-  public async run(modelNumber: string) {
+  public async run(
+    modelNumber: string,
+    startPersonaIndex: number = 0,
+    endPersonaIndex: number = this.personas.length - 1
+  ) {
     this.modelCount = modelNumber.includes("all") ? 4 : 1
 
     // Fortschrittsbalken initialisieren
     this.totalBar.setTotal(
-      this.personas.length * this.questions.length * this.modelCount
+      (endPersonaIndex - startPersonaIndex + 1) *
+        this.questions.length *
+        this.modelCount
     )
-    this.personaBar.setTotal(this.personas.length)
+    this.personaBar.setTotal(endPersonaIndex - startPersonaIndex + 1)
     this.modelBar.setTotal(this.modelCount)
     this.questionBar.setTotal(this.questions.length)
 
-    for (const [personaIndex, persona] of this.personas.entries()) {
-      this.personaBar.update(personaIndex + 1)
+    for (
+      let personaIndex = startPersonaIndex;
+      personaIndex <= endPersonaIndex;
+      personaIndex++
+    ) {
+      const persona = this.personas[personaIndex]
+      this.personaBar.update(personaIndex - startPersonaIndex + 1)
       this.modelBar.update(0) // Zurücksetzen für neue Persona
       this.questionBar.update(0) // Zurücksetzen für neue Persona
 

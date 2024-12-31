@@ -1,12 +1,13 @@
 import dotenv from "dotenv"
 import { PersonaModelResult, Result } from "../types/Result.js"
 import { ModelType } from "../types/ModelType.js"
-import { createModel } from "../functions/createModel.js"
+
 import { Persona } from "../types/Persona.js"
 import { Question } from "../types/Question.js"
 import * as cliProgress from "cli-progress"
 import * as fs from "fs/promises" // Promisified File Operations
 import chalk from "chalk"
+import { createModel } from "./survey-functions/createModel.js"
 
 dotenv.config()
 

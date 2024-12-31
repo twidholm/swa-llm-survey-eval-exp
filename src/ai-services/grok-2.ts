@@ -2,11 +2,10 @@ import OpenAI from "openai"
 import { Persona } from "../types/Persona.js"
 import Model from "./model.js"
 import { Question } from "../types/Question.js"
-import { text } from "stream/consumers"
-import { Result } from "../types/Result.js"
-import { createPersonaPrompt } from "../functions/createPersonaPrompt.js"
-import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
+
+import { createQuestionPrompt } from "../survey/survey-functions/createQuestionPrompt.js"
 import { ModelType } from "../types/ModelType.js"
+import { createPersonaPrompt } from "../survey/survey-functions/createPersonaPrompt.js"
 
 class Grok_Ai extends Model {
   private readonly instance = new OpenAI({

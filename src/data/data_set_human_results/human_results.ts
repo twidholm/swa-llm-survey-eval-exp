@@ -1,8 +1,8 @@
-type HumanResult = {
+export type HumanResult = {
   questionId: string
   answerdistribution: Array<AnswerPercentage>
 }
-type AnswerPercentage = {
+export type AnswerPercentage = {
   code: number
   percentage: number | string
 }

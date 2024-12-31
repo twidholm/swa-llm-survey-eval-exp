@@ -1,4 +1,4 @@
-import { Persona } from "../types/Persona.js"
+import { Persona } from "../../types/Persona.js"
 
 export function createPersonaPrompt(persona: Persona, qcount: number) {
   const prompt = `

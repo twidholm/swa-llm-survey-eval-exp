@@ -3,10 +3,9 @@ import { Question } from "../types/Question.js"
 
 import Anthropic from "@anthropic-ai/sdk"
 import Model from "./model.js"
-import { Result } from "../types/Result.js"
-import { createPersonaPrompt } from "../functions/createPersonaPrompt.js"
-import { createQuestionPrompt } from "../functions/createQuestionPrompt.js"
+import { createQuestionPrompt } from "../survey/survey-functions/createQuestionPrompt.js"
 import { ModelType } from "../types/ModelType.js"
+import { createPersonaPrompt } from "../survey/survey-functions/createPersonaPrompt.js"
 
 class Claude_Ai extends Model {
   private readonly instance = new Anthropic({

@@ -1,0 +1,156 @@
+[
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0.022,
+      "averageCohensKappa": 0.309,
+      "averageCramersV": 0.463
+    },
+    "topic": [
+      1,
+      45
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0.05,
+      "averageCohensKappa": 0.177,
+      "averageCramersV": 0.648
+    },
+    "topic": [
+      46,
+      56
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0.02,
+      "averageCohensKappa": 0.279,
+      "averageCramersV": 0.51
+    },
+    "topic": [
+      57,
+      105
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0,
+      "averageCohensKappa": 0.194,
+      "averageCramersV": 0.608
+    },
+    "topic": [
+      106,
+      111
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0.056,
+      "averageCohensKappa": 0.062,
+      "averageCramersV": 0.454
+    },
+    "topic": [
+      112,
+      120
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0.033,
+      "averageCohensKappa": 0,
+      "averageCramersV": 0
+    },
+    "topic": [
+      121,
+      130
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0,
+      "averageCohensKappa": 0.236,
+      "averageCramersV": 0.628
+    },
+    "topic": [
+      131,
+      151
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0,
+      "averageCohensKappa": 0,
+      "averageCramersV": 0
+    },
+    "topic": [
+      152,
+      157
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0,
+      "averageCohensKappa": 0.237,
+      "averageCramersV": 0.694
+    },
+    "topic": [
+      158,
+      163
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0,
+      "averageCohensKappa": 0.259,
+      "averageCramersV": 0.402
+    },
+    "topic": [
+      164,
+      175
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0.174,
+      "averageCohensKappa": 0.105,
+      "averageCramersV": 0.526
+    },
+    "topic": [
+      176,
+      198
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0.006,
+      "averageCohensKappa": 0.228,
+      "averageCramersV": 0.573
+    },
+    "topic": [
+      199,
+      234
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0.08,
+      "averageCohensKappa": 0.138,
+      "averageCramersV": 0.522
+    },
+    "topic": [
+      235,
+      259
+    ]
+  },
+  {
+    "averagePerTopic": {
+      "averageProportionAgreement": 0.139,
+      "averageCohensKappa": 0.448,
+      "averageCramersV": 0.286
+    },
+    "topic": [
+      260,
+      289
+    ]
+  }
+]

@@ -1,27 +1,24 @@
 import fs from "fs"
-import { sum, transpose } from "mathjs" // Optional: Für Matrixoperationen
-import { PersonaModelResult } from "../types/Result.js"
-import { ModelType } from "../types/ModelType.js"
-import { human_results } from "../data/data_set_human_results/human_results.js"
 
-// Typdefinitionen
-interface SurveyResult {
-  results: { role: string; content: string }[]
-  modeltype: number
-}
+import {
+  human_results,
+  HumanResult,
+} from "../data/data_set_human_results/human_results.js"
+import {
+  ComparisonResults,
+  ModelAverages,
+  QuestionAverage,
+  SurveyResult,
+} from "../types/Evaluate.js"
+import { calculateProportionAgreement } from "./eval-functions/proportion-agreement.js"
+import { calculateCohensKappa } from "./eval-functions/kappa.js"
+import { calculateCramersV } from "./eval-functions/cramer-v.js"
+import {
+  calculateAverage,
+  calculateAveragePerTopic,
+  Topics,
+} from "./eval-functions/calculateAverages.js"
 
-interface QuestionAverage {
-  questionId: string
-  averageDistribution: { [key: string]: number }
-}
-
-interface ModelAverages {
-  [modeltype: number]: QuestionAverage[]
-}
-type HumanResult = {
-  questionId: string
-  answerdistribution: Array<{ code: string; percentage: number }>
-}
 function formatHumanResults(humans: HumanResult[]): {
   [key: string]: number[]
 } {
@@ -33,59 +30,12 @@ function formatHumanResults(humans: HumanResult[]): {
     const percentages: number[] = Array(maxCode).fill(0)
 
     human.answerdistribution.forEach((a) => {
-      percentages[Number(a.code) - 1] = a.percentage
+      percentages[a.code - 1] = Number(a.percentage)
     })
 
     formatted[human.questionId] = percentages
   })
   return formatted
-}
-
-// Proportion Agreement
-function calculateProportionAgreement(
-  model: number[],
-  human: number[]
-): number {
-  let agreements = 0
-  for (let i = 0; i < model.length; i++) {
-    if (Math.round(model[i]) === Math.round(human[i])) agreements++
-  }
-  return agreements / model.length
-}
-
-// Cohen's Kappa
-function calculateCohensKappa(model: number[], human: number[]): number {
-  const total = model.reduce((a, b) => a + b, 0)
-  const observed =
-    model.reduce((sum, val, i) => sum + Math.min(val, human[i]), 0) / total
-
-  const modelProp = model.map((v) => v / total)
-  const humanProp = human.map((v) => v / total)
-  const expected = modelProp.reduce((sum, p, i) => sum + p * humanProp[i], 0)
-
-  return (observed - expected) / (1 - expected)
-}
-
-// Cramér's V
-function calculateCramersV(model: number[], human: number[]): number {
-  const total = sum(model) + sum(human)
-  const matrix = [model, human]
-
-  const rowSums = matrix.map((row) => sum(row))
-  const colSums = transpose(matrix).map((col) => sum(col as number[]))
-
-  let chiSquare = 0
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[i].length; j++) {
-      const expected = (rowSums[i] * colSums[j]) / total
-      chiSquare += expected
-        ? Math.pow(matrix[i][j] - expected, 2) / expected
-        : 0
-    }
-  }
-
-  const minDim = Math.min(matrix.length - 1, matrix[0].length - 1)
-  return Math.sqrt(chiSquare / (total * minDim))
 }
 
 // Umformatierung der Modellresultate
@@ -122,14 +72,13 @@ function formatModelResults(
   return formatted
 }
 
-function calculateModelAverages(data: SurveyResult[]): ModelAverages {
+function calculateModelDist(data: SurveyResult[]): ModelAverages {
   const modelAggregates: {
     [modeltype: number]: { [questionId: string]: { [answer: string]: number } }
   } = {}
   const modelCounts: { [modeltype: number]: { [questionId: string]: number } } =
     {}
 
-  // 1. Antworten aggregieren
   data.forEach((entry) => {
     const modeltype = entry.modeltype
 
@@ -138,84 +87,40 @@ function calculateModelAverages(data: SurveyResult[]): ModelAverages {
       modelCounts[modeltype] = {}
     }
 
-    entry.results.forEach((result, index) => {
+    let currentQuestionId: string | null = null
+
+    entry.results.forEach((result) => {
+      // Wenn es eine "user"-Frage ist, finde die entsprechende questionId
       if (result.role === "user") {
-        const questionId = `Q${Math.floor(index / 2) + 1}`
-        const answer = entry.results[index + 1]?.content?.trim()
-
-        if (!modelAggregates[modeltype][questionId]) {
-          modelAggregates[modeltype][questionId] = {}
-          modelCounts[modeltype][questionId] = 0
+        const matchedQuestion = compareQuestion(result.content)
+        if (matchedQuestion) {
+          currentQuestionId = matchedQuestion.questionId
+        } else {
+          currentQuestionId = null
         }
-
-        modelAggregates[modeltype][questionId][answer] =
-          (modelAggregates[modeltype][questionId][answer] || 0) + 1
-
-        modelCounts[modeltype][questionId] += 1
       }
-    })
-  })
 
-  // 2. Prozentwerte berechnen
-  const averages: ModelAverages = {}
-
-  Object.entries(modelAggregates).forEach(([modeltype, questions]) => {
-    averages[parseInt(modeltype)] = Object.entries(questions).map(
-      ([questionId, answers]) => {
-        const totalAnswers = modelCounts[parseInt(modeltype)][questionId]
-        const averageDistribution: { [key: string]: number } = {}
-        Object.entries(answers).forEach(([answer, count]) => {
-          averageDistribution[answer] = parseFloat(
-            ((count / totalAnswers) * 100).toFixed(2)
-          )
-        })
-
-        return { questionId, averageDistribution }
-      }
-    )
-  })
-
-  return averages
-}
-function calculateModelAverages2(data: SurveyResult[]): ModelAverages {
-  const modelAggregates: {
-    [modeltype: number]: { [questionId: string]: { [answer: string]: number } }
-  } = {}
-  const modelCounts: { [modeltype: number]: { [questionId: string]: number } } =
-    {}
-
-  // 1. Antworten aggregieren über alle Personas eines Modeltypes
-  data.forEach((entry) => {
-    const modeltype = entry.modeltype
-
-    if (!modelAggregates[modeltype]) {
-      modelAggregates[modeltype] = {}
-      modelCounts[modeltype] = {}
-    }
-
-    entry.results.forEach((result, index) => {
-      // Nur Antworten von der Rolle "assistant" zählen
-      if (result.role === "assistant") {
-        const questionId = `Q${Math.floor(index / 2) + 1}`
+      // Wenn es eine "assistant"-Antwort ist, benutze die gespeicherte Frage-ID
+      if (result.role === "assistant" && currentQuestionId) {
         const answer = result.content.trim()
 
         // Initialisiere die Strukturen für die Frage
-        if (!modelAggregates[modeltype][questionId]) {
-          modelAggregates[modeltype][questionId] = {}
-          modelCounts[modeltype][questionId] = 0
+        if (!modelAggregates[modeltype][currentQuestionId]) {
+          modelAggregates[modeltype][currentQuestionId] = {}
+          modelCounts[modeltype][currentQuestionId] = 0
         }
 
         // Antwort aggregieren
-        modelAggregates[modeltype][questionId][answer] =
-          (modelAggregates[modeltype][questionId][answer] || 0) + 1
+        modelAggregates[modeltype][currentQuestionId][answer] =
+          (modelAggregates[modeltype][currentQuestionId][answer] || 0) + 1
 
         // Zähle die Gesamtzahl der Antworten für diese Frage
-        modelCounts[modeltype][questionId] += 1
+        modelCounts[modeltype][currentQuestionId]++
       }
     })
   })
 
-  // 2. Prozentwerte berechnen
+  // Berechnung der durchschnittlichen Verteilungen
   const averages: ModelAverages = {}
 
   Object.entries(modelAggregates).forEach(([modeltype, questions]) => {
@@ -224,7 +129,7 @@ function calculateModelAverages2(data: SurveyResult[]): ModelAverages {
         const totalAnswers = modelCounts[parseInt(modeltype)][questionId]
         const averageDistribution: { [key: string]: number } = {}
 
-        // Berechne den Prozentwert pro Antwort
+        // Prozentwerte berechnen
         Object.entries(answers).forEach(([answer, count]) => {
           averageDistribution[answer] = parseFloat(
             ((count / totalAnswers) * 100).toFixed(2)
@@ -239,21 +144,29 @@ function calculateModelAverages2(data: SurveyResult[]): ModelAverages {
   return averages
 }
 
+function compareQuestion(content: string): { questionId: string } | null {
+  const match = content.match(/Q\d+/)
+
+  if (match) {
+    return { questionId: match[0] }
+  }
+
+  return null
+}
+
 function compareModelsWithHumans(
-  modelResults: ModelAverages,
+  modelResults: Array<QuestionAverage>,
   humanResults: HumanResult[]
 ) {
   const formattedModels = formatModelResults(modelResults, humanResults)
   const formattedHumans = formatHumanResults(humanResults)
-  const comparisonResults: any = {}
+  const comparisonResults: ComparisonResults = {}
 
   Object.keys(formattedModels).forEach((questionId) => {
     if (formattedHumans[questionId]) {
-      // console.log("Question Id", questionId)
       const model = formattedModels[questionId]
       const human = formattedHumans[questionId]
-      // console.log("Model", model)
-      // console.log("Human", human)
+
       comparisonResults[questionId] = {
         proportionAgreement: calculateProportionAgreement(model, human),
         cohensKappa: calculateCohensKappa(model, human),
@@ -264,25 +177,78 @@ function compareModelsWithHumans(
 
   return comparisonResults
 }
-// Hauptlogik
+
 export async function evaluate() {
-  const rawData = fs.readFileSync("results.json", "utf8")
-  const data: SurveyResult[] = JSON.parse(rawData)
-  // console.log(data)
-  data.forEach((entry) => {
-    const modeltype = entry.modeltype
-    console.log(modeltype)
-  })
-  const distributions = calculateModelAverages2(data)
-  // console.log(distributions)
+  const fileNames = [
+    "results_0_model.json",
+    "results_1_model.json",
+    "results_2_model.json",
+    "results_3_model.json",
+  ]
+
+  let data: SurveyResult[] = []
+
+  for (const file of fileNames) {
+    try {
+      const rawFileData = fs.readFileSync(file, "utf8")
+      const fileData: SurveyResult[] = JSON.parse(rawFileData)
+
+      fileData.forEach((person) => {
+        const formattedPerson: SurveyResult = {
+          modeltype: person.modeltype,
+          results: person.results.slice(2, person.results.length - 1), // Filter unnötige Rollen
+        }
+        data.push(formattedPerson)
+      })
+    } catch (error) {
+      console.error(`Fehler beim Verarbeiten der Datei ${file}:`, error)
+    }
+  }
+
+  const distributions = calculateModelDist(data)
+
   for (let i = 0; i <= 3; i++) {
-    const modeldist = distributions[i]
-    // console.log(modeldist)
-    const newModeldist = modeldist.slice(0, 5)
-    const humanResults = human_results.slice(0, 5)
-    const results = compareModelsWithHumans(newModeldist, humanResults)
-    console.log(JSON.stringify(results, null, 2))
+    console.log(`Verarbeite Modelltyp ${i}...`)
+
+    const modelDist = distributions[i]
+      ? distributions[i].slice(0, human_results.length)
+      : []
+    const humanResultsSubset = human_results.slice(0, human_results.length)
+
+    const results = compareModelsWithHumans(modelDist, humanResultsSubset)
+    const averages = calculateAverage(results)
+
+    try {
+      fs.writeFileSync(
+        `averages_results_model_${i}.json`,
+        JSON.stringify(averages, null, 2)
+      )
+    } catch (error) {
+      console.error(
+        `Fehler beim Speichern von averages_results_model_${i}.json:`,
+        error
+      )
+    }
+
+    const topicAverages = []
+    for (const topic of Topics) {
+      const averagePerTopic = calculateAveragePerTopic(results, [
+        topic[0],
+        topic[1],
+      ])
+      topicAverages.push({ averagePerTopic, topic })
+    }
+
+    try {
+      fs.writeFileSync(
+        `topic_averages_results_model_${i}.json`,
+        JSON.stringify(topicAverages, null, 2)
+      )
+    } catch (error) {
+      console.error(
+        `Fehler beim Speichern von topic_averages_results_model_${i}.json:`,
+        error
+      )
+    }
   }
 }
-
-// Ausführung

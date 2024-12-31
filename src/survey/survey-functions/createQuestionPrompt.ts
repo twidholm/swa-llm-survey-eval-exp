@@ -1,5 +1,5 @@
-import { Persona } from "../types/Persona.js"
-import { Question } from "../types/Question.js"
+import { Persona } from "../../types/Persona.js"
+import { Question } from "../../types/Question.js"
 
 export function createQuestionPrompt(question: Question) {
   const optionsText = question.answer_options
